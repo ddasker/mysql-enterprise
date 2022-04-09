@@ -18,7 +18,6 @@ In this lab, you will be guided through the following tasks:
 - Configure security list to allow MySQL incoming connections
 
 
-
 ### Prerequisites
 
 * An Oracle Free Tier or Paid Cloud Account
