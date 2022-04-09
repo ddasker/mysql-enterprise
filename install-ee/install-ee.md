@@ -33,13 +33,14 @@ This lab assumes you have:
 
 **Note:** If not already connected with SSH
 - connect to **myclient** instance using Cloud Shell (**Example:** ssh -i ~/.ssh/id_rsa opc@132.145.17….)
-
-1. Usually to run mysql  the user “mysql” is used, but because it is already available we show here how create a new one.
-2. Create a new user/group for your MySQL service (mysqluser/mysqlgrp) and a add ‘mysqlgrp’ group to opc to help labs execution. 
     ```
     <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
     ```
     ![CONNECT](./images/06connect01-signin.png " ")
+
+
+1. Usually to run mysql  the user “mysql” is used, but because it is already available we show here how create a new one.
+2. Create a new user/group for your MySQL service (mysqluser/mysqlgrp) and a add ‘mysqlgrp’ group to opc to help labs execution. 
 
 3.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
