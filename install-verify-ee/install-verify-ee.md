@@ -41,25 +41,26 @@ Please note that now you have an instance on the server on port 3306. To connect
 - UNIX socket:
 - TCP port:
 
-## Task 2: 	Connect to Ports 3306 
+## Task 2: 	Connect to Port 3306 
 
 1.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
     ```
     <copy>mysql -u root -p --protocol=tcp</copy>
     ```
-2.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
+ **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>status</copy>
     ```
-3.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+
+ **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
 
     ```
     <copy>exit</copy>
     ```
 	
-4.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+2. Check a different port:
+ **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>mysql -uroot -p -h localhost -P3310 --protocol=tcp </copy>
@@ -83,70 +84,68 @@ Please note that now you have an instance on the server on port 3306. To connect
 ## Task 4: Learn Useful SQL Statements
 
 1. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
     ```
-2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
+2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW VARIABLES LIKE "%version%";</copy>
     ```
 
 3. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES WHERE engine <> 'InnoDB';</copy>
     ```
-4. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
+4. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES WHERE engine = 'InnoDB';</copy>
     ```
-5. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
+5. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES where engine = 'InnoDB' and table&#95;schema not in ('mysql','information&#95;schema', 'sys');</copy>
     ```
-6. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
+6. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT ENGINE, COUNT(*), SUM(DATA&#95;LENGTH)/ 1024 / 1024 AS 'Data MB', SUM(INDEX&#95;LENGTH)/1024 / 1024 AS 'Index MB' FROM information&#95;schema.TABLEs group by engine;</copy>
     ```
-7. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
+7. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT table&#95;schema AS 'Schema', SUM( data&#95;length ) / 1024 / 1024 AS 'Data MB', SUM( index&#95;length ) / 1024 / 1024 AS 'Index MB', SUM( data&#95;length + index&#95;length ) / 1024 / 1024 AS 'Sum' FROM information&#95;schema.tables GROUP BY table&#95;schema ;</copy>
     ```
-9. The “\G” is like “;” with a different way to show results 
 
+8. The “\G” is like “;” with a different way to show results 
   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
     ```
     <copy>SHOW GLOBAL VARIABLES\G</copy>
     ```
-  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SHOW GLOBAL STATUS\G</copy>
     ```
-  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SHOW FULL PROCESSLIST;</copy>
     ```
-  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SHOW ENGINE INNODB STATUS\G</copy>
     ```
 
+    ```
+    <copy>exit</copy>
+    ```
+
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [MySQL Tutorial](https://dev.mysql.com/doc/refman/8.0/en/tutorial.html)
-* [URL text 2](le.com)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
