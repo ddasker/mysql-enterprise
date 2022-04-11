@@ -27,7 +27,7 @@ This lab assumes you have:
 
 **Notes:**
 - References
-- https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html
+- [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
 
 
 ## Task 1: Install and setup TDE  
