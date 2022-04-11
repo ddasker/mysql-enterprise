@@ -67,7 +67,7 @@ Please note that now you have an instance on the server on port 3306. To connect
     ```
 
 
-## Task 3: Import Sample Databses
+## Task 3: Import Sample Databases
 
 1.	Import the employees demo database that is in /workshop/databases folder.
 
