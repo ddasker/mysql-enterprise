@@ -9,6 +9,14 @@ Estimated Workshop Time: 1 hours 30 minutes (This estimate is for the entire wor
 Your Free Tier server should be accessible for a couple of days after this workshop so what you do not finish when following instruction will be able to be covered later at your own pace.
 
 
+## Prerequisite
+
+For working on this workshop you will need a clean computer to run on.  We should have provided you with a link on setting up a free account on Oracle Cloud Infrastructure (OCI).  
+
+If you have not set it up, then please go through the following steps:
+
+* [OCI Setup](https://plforacle.github.io/learning-library/data-management-library/mysql-se/mysql-cloud/workshops/register/index.html)
+
 ## Objectives
 
 In this workshop, you will learn how to work with 
