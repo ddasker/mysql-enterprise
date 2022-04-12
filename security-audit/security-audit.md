@@ -77,7 +77,7 @@ This lab assumes you have:
     <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf $MYSQLD_OPTS &</copy>
     ```
 
-     e. Load Audit functions
+     e. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306 < /workshop/audit_log_filter_linux_install.sql</copy>
