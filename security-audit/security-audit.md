@@ -251,8 +251,6 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-SELECT audit_log_filter_set_filter('log_table_access_events', '{ "filter": { "class": { "name": "table_access" } } }');
-
 
 7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables 
 
