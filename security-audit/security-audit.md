@@ -100,7 +100,7 @@ This lab assumes you have:
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
     ```
 
-    a. Using the Administrative Connection, create a Audit Filter for all activity and all users
+    a. Using the Administrative Connection, create a Audit Filter for all activity and all users. Privileges required are AUDIT_ADMIN and SUPER
  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT audit_log_filter_set_filter('log_all', '{ "filter": { "log": true } }');</copy>
