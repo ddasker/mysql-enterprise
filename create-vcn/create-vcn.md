@@ -69,13 +69,13 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 2: Configure security list to allow MySQL incoming connections
 
-1. On myvcn page under 'Subnets in (root) Compartment', click  '**Private Subnet-myvcn**' 
+1. On myvcn page under 'Subnets in (root) Compartment', click  '**Public Subnet-myvcn**' 
      ![VCN](./images/03vcn07.png " ")
 
-2.	On Private Subnet-myvcn page under 'Security Lists',  click  '**Security List for Private Subnet-myvcn**'
+2.	On Public Subnet-myvcn page under 'Security Lists',  click  '**Security List for Public Subnet-myvcn**'
     ![VCN](./images/03vcn08.png " ")
 
-3.	On Security List for Private Subnet-myvcn page under 'Ingress Rules', click '**Add Ingress Rules**' 
+3.	On Security List for Public Subnet-myvcn page under 'Ingress Rules', click '**Add Ingress Rules**' 
     ![VCN](./images/03vcn09.png " ")
 
 4.	On Add Ingress Rules page under Ingress Rule 1
@@ -95,7 +95,7 @@ Description
  Click 'Add Ingress Rule'
     ![VCN](./images/03vcn10.png " ")
 
-5.	On Security List for Private Subnet-myvcn page, the new Ingress Rules will be shown under the Ingress Rules List
+5.	On Security List for Public Subnet-myvcn page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
 
