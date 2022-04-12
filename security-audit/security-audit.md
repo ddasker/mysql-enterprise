@@ -363,7 +363,7 @@ This lab assumes you have:
 
 
 10. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection,
- **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
     ```
@@ -390,6 +390,18 @@ This lab assumes you have:
    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SET GLOBAL audit_log_disable = true;</copy>
+    ```
+
+   e. Check what Audit Functions are available 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT * FROM  mysql.func;</copy>
+    ```
+
+   f. Check that the Audit plugin loaded 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'audit%';</copy>
     ```
 
 
