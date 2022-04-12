@@ -251,8 +251,33 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
+SELECT audit_log_filter_set_filter('log_table_access_events', '{ "filter": { "class": { "name": "table_access" } } }');
 
-7. Let's setup Audit to only log access to salaries tables. Using the Administrative Connection, create a Audit Filter for salaries 
+
+7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables 
+
+    a. Remove previous filter:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT audit_log_filter_remove_filter('log_all ');</copy>
+    ```
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT audit_log_filter_flush();</copy>
+    ```
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT audit_log_filter_set_filter('log_table_access_events', '{ "filter": { "class": { "name": "table_access" } } }');</copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT audit_log_filter_set_user('%', 'log_table_access_events');</copy>
+    ```
+
+8. Let's setup Audit to only log access to salaries tables. Using the Administrative Connection, create a Audit Filter for salaries 
 
     a. Remove previous filter:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
@@ -294,7 +319,7 @@ This lab assumes you have:
     ```
 
 
-8. Login as 'appuser1' and run a query against the salaries table;
+9. Login as 'appuser1' and run a query against the salaries table;
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
@@ -318,8 +343,7 @@ This lab assumes you have:
     ```
 
 
-
-9. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection,
+10. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection,
  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
@@ -350,7 +374,7 @@ This lab assumes you have:
     ```
 
 
-10. You can check the documentation about other Log filters & policies
+11. You can check the documentation about other Log filters & policies
 
 ## Learn More
 
