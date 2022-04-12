@@ -62,7 +62,39 @@ This lab assumes you have:
     ```
     <copy>SHOW GRANTS FOR 'appuser1'@'127.0.0.1';</copy>
     ```
-## Task 2: Connect to a second mysql-enterprise on Server
+
+## Task 2: Add additional users
+
+1. Using the Administrative Connection, create a new user and restrict the user to your “Server” IP
+
+	a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    ```
+    <copy>CREATE USER 'appuser2'@'127.0.0.1' IDENTIFIED BY 'Welcome1!';</copy>
+    ```
+
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    ```
+    <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser2'@'127.0.0.1';</copy>
+    ```
+
+2. Using the Administrative Connection, create another new user and restrict the user to your “Server” IP
+
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    ```
+    <copy>CREATE USER 'appuser3'@'127.0.0.1' IDENTIFIED BY 'Welcome1!';</copy>
+    ```
+
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    ```
+    <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser3'@'127.0.0.1';</copy>
+    ```
+
+## Task 3: Connect to a second mysql-enterprise on Server
+
 1. Open a new SSH connection on Server and from there connect to mysql-enterprise with appuser1
 
 	a. connect to mysql-enterprise with appuser1
@@ -107,7 +139,7 @@ This lab assumes you have:
     <copy>SELECT * FROM employees;</copy>
     ```
 
-## Task 3: Use appuser1 connection
+## Task 4: Use appuser1 connection
 1.	Close and reopen the appuser1 connection for the user, then repeat above commands. There is a difference? 
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
@@ -153,7 +185,7 @@ This lab assumes you have:
     ```   
 4.	Close and reopen appuser session, do you see schemas?
 
-## Task 4: Restore user privileges
+## Task 5: Restore user privileges
 1.	Using the administrative connection restore user privileges to reuse it in next labs
 
 	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -161,35 +193,7 @@ This lab assumes you have:
     <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser1'@'127.0.0.1';</copy>
     ```
 
-## Task 5: Add additional users
 
-1. Using the Administrative Connection, create a new user and restrict the user to your “Server” IP
-
-	a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>CREATE USER 'appuser2'@'127.0.0.1' IDENTIFIED BY 'Welcome1!';</copy>
-    ```
-
-	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser2'@'127.0.0.1';</copy>
-    ```
-
-2. Using the Administrative Connection, create another new user and restrict the user to your “Server” IP
-
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>CREATE USER 'appuser3'@'127.0.0.1' IDENTIFIED BY 'Welcome1!';</copy>
-    ```
-
-	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser3'@'127.0.0.1';</copy>
-    ```
 
 
 ## Learn More
