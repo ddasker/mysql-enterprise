@@ -337,7 +337,13 @@ This lab assumes you have:
     <copy>SELECT * FROM mysql.audit_log_user;</copy>
     ```
 
-   c. Global Audit log disable
+   c. Reading from Audit Log within MySQL Client
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT JSON_PRETTY(CONVERT(audit_log_read(audit_log_read_bookmark()) using utf8mb4))\G</copy>
+    ```
+
+   d. Global Audit log disable
    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SET GLOBAL audit_log_disable = true;</copy>
