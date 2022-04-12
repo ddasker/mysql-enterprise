@@ -275,6 +275,27 @@ This lab assumes you have:
     <copy>SELECT audit_log_filter_set_user('%', 'log_table_access_events');</copy>
     ```
 
+    d.  Login to mysql-enterprise with the user “appuser2”, then submit some commands
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
+    ```
+
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+    ```
+    <copy>USE employees;</copy>
+    ```
+
+    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT * FROM employees limit 25;</copy>
+    ```
+
+    g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
+    ```
+
 8. Let's setup Audit to only log access to salaries tables. Using the Administrative Connection, create a Audit Filter for salaries 
 
     a. Remove previous filter:
