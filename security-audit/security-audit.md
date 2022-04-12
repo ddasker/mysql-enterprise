@@ -1,6 +1,7 @@
 # SECURITY - MYSQL ENTERPRISE AUDIT
 
 ## Introduction
+
 MySQL Enterprise Audit
 Objective: Auditing in action…
 
@@ -9,29 +10,30 @@ Estimated Lab Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Setup Audit Log
 * Use Audit
 
-
 ### Prerequisites
 
-
 This lab assumes you have:
+
 * An Oracle account
 * All previous labs successfully completed
 
 * Lab standard  
-    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
-    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
-    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
-    
+  * ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+  * ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+  * ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
+
 **Notes:**
-- Audit can be activated and configured without stopping the instance. In the lab we edit my.cnf to see how to do it in this way
+* Audit can be activated and configured without stopping the instance. In the lab we edit my.cnf to see how to do it in this way
 
 ## Task 1: Setup Audit Log
 
-1.  If already connected to MySQL then exit
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+1. If already connected to MySQL then exit
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
         <copy>exit</copy>
     ```
@@ -40,63 +42,71 @@ This lab assumes you have:
 
     a. Edit the my.cnf setting in /mysql/etc/my.cnf
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>sudo nano /mysql/etc/my.cnf</copy>
     ```
 
     b. Change the line “plugin-load=thread_pool.so” to load the plugin
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>plugin-load=thread_pool.so;audit_log.so</copy>
     ```
 
     c. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>audit_log=FORCE_PLUS_PERMANENT</copy>
     ```
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>audit_log_rotate_on_size=20971520</copy>
     ```
-    
+
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>audit_log_format=JSON</copy>
     ```
-    
+
     d. Restart MySQL (you can configure audit without restart the server, but here we show how to set the configuration file)
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysqladmin -uroot -p -h 127.0.0.1 -P3306 shutdown</copy>
     ```
 
      **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf $MYSQLD_OPTS &</copy>
     ```
 
      e. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306 < /workshop/audit_log_filter_linux_install.sql</copy>
     ```
 
 3. Connect to your mysql-enterprise with administrative user
 
-  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
     ```
 
     a. Using the Administrative Connection, create a Audit Filter for all activity and all users
-	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+ **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT audit_log_filter_set_filter('log_all', '{ "filter": { "log": true } }');</copy>
     ```
 
-	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+ **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT audit_log_filter_set_user('%', 'log_all');</copy>
     ```
@@ -112,212 +122,244 @@ This lab assumes you have:
     <copy>tail -f /mysql/data/audit.log</copy>
     ```
 
-
-## Task 2: Use Audit 
+## Task 2: Use Audit
 
 1. Login to mysql-enterprise with the user “appuser1”, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-   
-2. Let's setup Audit to only log connections. Using the Administrative Connection, create a Audit Filter for all connections 
+2. Let's setup Audit to only log connections. Using the Administrative Connection, create a Audit Filter for all connections
 
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SET @f = '{ "filter": { "class": { "name": "connection" } } }';</copy>
     ```
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_set_filter('log_conn_events', @f);</copy>
     ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_set_user('%', 'log_conn_events');</copy>
     ```
 
-
-3.  Login to mysql-enterprise with the user “appuser1”, then submit some commands
+3. Login to mysql-enterprise with the user “appuser1”, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-
-4. Let's setup Audit to only log unique users. Using the Administrative Connection, create a Audit Filter for appuser1 
+4. Let's setup Audit to only log unique users. Using the Administrative Connection, create a Audit Filter for appuser1
 
     a. Remove previous filter:
 
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_remove_filter('log_conn_events ');</copy>
     ```
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_flush();</copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_set_filter('log_all', '{ "filter": { "log": true } }');</copy>
     ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT audit_log_filter_set_user('appuser1@127.0.0.1', 'log_all');</copy>
     ```
 
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_flush();</copy>
     ```
 
-
-5.  Login to mysql-enterprise with the user “appuser1”, then submit some commands
+5. Login to mysql-enterprise with the user “appuser1”, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
-    
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
 
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-
-6.  Login to mysql-enterprise with the user “appuser2”, then submit some commands
+6. Login to mysql-enterprise with the user “appuser2”, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser2 -p -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
 
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-
-7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables 
+7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables
 
     a. Remove previous filter:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_remove_filter('log_all ');</copy>
     ```
 
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_flush();</copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_set_filter('log_table_access_events', '{ "filter": { "class": { "name": "table_access" } } }');</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_set_user('%', 'log_table_access_events');</copy>
     ```
 
     d.  Login to mysql-enterprise with the user “appuser2”, then submit some commands
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
     ```
 
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
 
-    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
 
-    g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-8. Let's setup Audit to only log access to salaries tables. Using the Administrative Connection, create a Audit Filter for salaries 
+8. Let's setup Audit to only log access to salaries tables. Using the Administrative Connection, create a Audit Filter for salaries
 
     a. Remove previous filter:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_remove_filter('log_all ');</copy>
     ```
 
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT audit_log_filter_flush();</copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SET @f='
+
  {
     "filter": {
-       "class": 
+       "class":
          {
           "name": "table_access",
-          "event": 
+          "event":
             {
               "name": [ "insert", "update", "delete" ],
               "log": { "field": { "name": "table_name.str", "value": "salaries" }}
@@ -327,83 +369,85 @@ This lab assumes you have:
 }';</copy>
     ```
 
-   c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT audit_log_filter_set_filter('salary_insert', @f);</copy>
     ```
 
-   d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT audit_log_filter_set_user('%', 'salary_insert');</copy>
     ```
 
-
 9. Login as 'appuser1' and run a query against the salaries table;
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
     ```
     <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>USE employees;</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>SELECT * FROM employees limit 25;</copy>
     ```
 
     d. Run updates on salaries table
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
     ```
     <copy>UPDATE employees.salaries SET salary = 74234 WHERE emp_no = 10001;</copy>
     ```
 
+10. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection
 
-10. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection,
-   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
     ```
 
    a. Check existing filters:
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT * FROM mysql.audit_log_filter;</copy>
     ```
 
    b. Check Users being Audited:
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT * FROM mysql.audit_log_user;</copy>
     ```
 
    c. Reading from Audit Log within MySQL Client
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT JSON_PRETTY(CONVERT(audit_log_read(audit_log_read_bookmark()) using utf8mb4))\G</copy>
     ```
 
    d. Global Audit log disable
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SET GLOBAL audit_log_disable = true;</copy>
     ```
 
-   e. Check what Audit Functions are available 
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   e. Check what Audit Functions are available
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT * FROM  mysql.func;</copy>
     ```
 
-   f. Check that the Audit plugin loaded 
-   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+   f. Check that the Audit plugin loaded
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'audit%';</copy>
     ```
-
 
 11. You can check the documentation about other Log filters & policies
 
@@ -413,5 +457,6 @@ This lab assumes you have:
 * [Audit Filter Definitions](https://dev.mysql.com/doc/refman/8.0/en/audit-log-filter-definitions.html)
 
 ## Acknowledgements
+
 * **Author** - Dale Dasker, MySQL Solution Engineering
 * **Last Updated By/Date** - <Dale Dasker, March 2022
