@@ -232,12 +232,12 @@ To help you we created one with some variables, please copy it
 
 11. After the value  **# User specific environment and startup programs**. Add the following line:
     ```
-<copy>PATH=$PATH:/mysql/mysql-latest/bin:$HOME/.local/bin:$HOME/bin</copy>
+    <copy>PATH=$PATH:/mysql/mysql-latest/bin:$HOME/.local/bin:$HOME/bin</copy>
     ```
 
-12. Save the changes, log out and log in again from the ssh for the changes to take effect on the user profile. Or you can source the .bash_profile file to update your environment
+12. Save teh changes, log out and log in again via ssh for the changes to take effect on the user profile.  Or you can source the .bash_profile file to update your environment.
     ```
-<copy>source /home/opc/.bash&#95;profile</copy>
+   <copy>source /home/opc/.bash&#95;profile</copy>
     ```
 
 
