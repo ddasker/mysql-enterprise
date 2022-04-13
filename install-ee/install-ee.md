@@ -235,9 +235,9 @@ To help you we created one with some variables, please copy it
 <copy>PATH=$PATH:/mysql/mysql-latest/bin:$HOME/.local/bin:$HOME/bin</copy>
     ```
 
-12. Save the changes, log out and log in again from the ssh for the changes to take effect on the user profile. Or you can 'source' the .bash_profile file to update your environment
+12. Save the changes, log out and log in again from the ssh for the changes to take effect on the user profile. Or you can source the .bash_profile file to update your environment
     ```
-<copy>source /home/opc/.bash&#95;profile<</copy>
+<copy>source /home/opc/.bash&#95;profile</copy>
     ```
 
 
