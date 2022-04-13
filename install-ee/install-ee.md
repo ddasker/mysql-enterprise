@@ -235,7 +235,7 @@ To help you we created one with some variables, please copy it
     <copy>PATH=$PATH:/mysql/mysql-latest/bin:$HOME/.local/bin:$HOME/bin</copy>
     ```
 
-12. Save the changes, log out and log in again via ssh for the changes to take effect on the user profile.  Or you can source the .bash profile file to update your environment.
+12. Save the changes, log out and log in again via ssh for the changes to take effect on the user profile.  Or you can source the .bash&#95;profile file to update your environment.
 
  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
