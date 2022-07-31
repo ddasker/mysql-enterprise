@@ -11,7 +11,7 @@ Objectives:
 - have a look on useful statements
 
 
-Estimated Time: -- minutes
+Estimated Time: -- 10 minutes
 
 ### Objectives
 
