@@ -23,7 +23,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 ## Task 1: Download Lab Material and SSH client
-1. [lecture](files/MySQL_Audit_TDE_08042022.pdf)
+1. [lecture](files/_MySQL_Audit_TDE_08042022.pdf)
 2. [lab guide](files/MySQL_Enterprise_Edition_Bootcamp.pdf)
 3. SSH keys to connect labs (it’s the same key in two different formats).  These keys should have been created when you were creating your Compute Instance.  
     * id_rsa in native openssl format. Use it with Workbench
