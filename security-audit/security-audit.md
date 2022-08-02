@@ -309,7 +309,7 @@ This lab assumes you have:
     <copy>SELECT audit_log_filter_set_user('%', 'log_table_access_events');</copy>
     ```
 
-    d.  Login to mysql-enterprise with the user “appuser2”, then submit some commands
+    d.  Login to mysql-enterprise with the user “appuser1”, then submit some commands
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
