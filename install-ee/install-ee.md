@@ -29,7 +29,7 @@ This lab assumes you have:
     - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
     - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
     
-## Task 1: Install MySQL Enterprise Edition
+## Task 1: Install MySQL Enterprise Edition using Generic Linux Tar Image
 
 **Note:** If not already connected with SSH
 - connect to **myclient** instance using Cloud Shell (**Example:** ssh -i ~/.ssh/id_rsa opc@132.145.17….)
