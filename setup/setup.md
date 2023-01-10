@@ -134,7 +134,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo curl -u vsftp_user:vsftp_Pa33w0rd  -o workshop.tar.gz ftp://129.158.254.37/workshop.tar.gz</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ebxgQDjrtGlFavLLrGwJKm_f66nQNn9a3kwmsKouWH1RlmqIzALeQdOSE5rI9PS-/n/idazzjlcjqzj/b/bucket-20230109-1614-Security_Workshop_01252023/o/MySQL_FilesArchive.zip</copy>
     ```
     
 4.  Extract workshop files 
