@@ -73,7 +73,7 @@ Please note that now you have an instance on the server on port 3306. To connect
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>cd /workshop/database/employees/</copy>
+    <copy>cd /workshop/database</copy>
     ```
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
