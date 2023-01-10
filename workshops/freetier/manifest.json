@@ -28,7 +28,7 @@
         {
             "title": "Lab 4: Install - MySQL Enterprise Edition",
             "description": "Install - MySQL Enterprise Edition",
-            "filename": "../../install-ee/install-ee.md"
+            "filename": "../../install-ee-rpm/install-ee.md"
         },
         {
             "title": "Lab 5: Install - Verify MySQL Enterprise Edition ",
