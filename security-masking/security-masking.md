@@ -175,6 +175,30 @@ This lab assumes you have:
     <copy>GRANT SELECT ON employees.masked_customer TO 'accounting'@'%';</copy>
     ```
 
+12. Log in with new user account and run queries
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>quit;</copy>
+    ```
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -uaccounting -pPa33word! -h 127.0.0.1 -P 3306</copy>
+    ```
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SELECT * FROM employees.masked_customer LIMIT 5;</copy>
+    ```
+
+13. Try accessing table that is not masked
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SELECT * FROM employees.employees_mask LIMIT 5;</copy>
+    ```
+
 ## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
