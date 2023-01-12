@@ -66,24 +66,47 @@ This lab assumes you have:
     ```
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';</copy>
+    <copy>CREATE FUNCTION gen_rnd_ssn RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
+    <copy>CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';</copy>
+    ```
+    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
     <copy>CREATE FUNCTION mask_outer RETURNS STRING SONAME 'data_masking.so';</copy>
+    ```
+    g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>CREATE FUNCTION mask_ssn RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
 2. Use data masking functions
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_inner(NAME, 1,1) FROM world.city limit 10;</copy>
+    <copy>SELECT mask_inner(last_name, 2,1) FROM employees.employees limit 10;</copy>
     ```
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_outer(NAME, 1,1) FROM world.city limit 10;</copy>
+    <copy>SELECT mask_outer(last_name, 2,1) FROM employees.employees limit 10;</copy>
     ```
 
 ## Task 3: Discussion and use  Masking functions and random generators
+
+1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT mask_inner(NAME, 1,1, '&') FROM world.city limit 1;</copy>
+    ```
+2. Use data masking random generators to these statements several times
+
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SELECT gen_range(1, 200);</copy>
+    ```
+
+## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
 
