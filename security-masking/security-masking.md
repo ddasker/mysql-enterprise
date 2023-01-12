@@ -114,6 +114,48 @@ This lab assumes you have:
     <copy>INSERT INTO employees_mask SELECT * FROM employees;</copy>
     ```
 
+4. Create new column for SSN's
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>ALTER TABLE employees_mask ADD COLUMN ssn varchar(11);</copy>
+    ```
+
+5. Create new column for emails's
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>ALTER TABLE employees_mask ADD COLUMN email varchar(40);</copy>
+    ```
+
+6. Use Functions to generate sample SSN data
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>UPDATE employees_mask SET ssn = gen_rnd_ssn() WHERE 1;</copy>
+    ```
+
+7. Use Functions to generate sample Email data
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>UPDATE employees_mask SET email = gen_rnd_email() WHERE 1;</copy>
+    ```
+
+8. Let's look at the data that we just created
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SELECT * FROM employees_mask LIMIT 5;</copy>
+    ```
+
+9. Let's mask the SSN
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SELECT emp_no,first_name,last_name,mask_ssn(CONVERT(ssn USING latin1)) AS ssn FROM employees_mask LIMIT 5;</copy>
+    ```
+
 ## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
