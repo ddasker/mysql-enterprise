@@ -93,17 +93,25 @@ This lab assumes you have:
 
 ## Task 3: Discussion and use  Masking functions and random generators
 
-1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
+1. Create Table to generate and add masking data
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_inner(NAME, 1,1, '&') FROM world.city limit 1;</copy>
+    <copy>CREATE TABLE employees_mask LIKE employees;</copy>
     ```
-2. Use data masking random generators to these statements several times
 
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+2. Add data to newly created table
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
-    <copy>SELECT gen_range(1, 200);</copy>
+    <copy>INSERT INTO employees_mask SELECT * FROM employees;</copy>
+    ```
+
+3. Add data to newly created table
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>INSERT INTO employees_mask SELECT * FROM employees;</copy>
     ```
 
 ## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
