@@ -156,6 +156,25 @@ This lab assumes you have:
     <copy>SELECT emp_no,first_name,last_name,mask_ssn(CONVERT(ssn USING latin1)) AS ssn FROM employees_mask LIMIT 5;</copy>
     ```
 
+10. Let's create a view which only shows the masked data
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>CREATE VIEW masked_customer AS SELECT emp_no,first_name,last_name,mask_ssn(CONVERT(ssn USING latin1)) AS ssn FROM employees_mask;</copy>
+    ```
+
+11. Let's create a user who only has access to the view with the masked data
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>CREATE USER 'accounting'@'%' IDENTIFIED BY 'Pa33word!';</copy>
+    ```
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>GRANT SELECT ON employees.masked_customer TO 'accounting'@'%';</copy>
+    ```
+
 ## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
