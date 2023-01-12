@@ -28,7 +28,7 @@ This lab assumes you have:
 
 **Notes:**
 - Data masking has more functions than what we test in the lab. The full list of functions is here
-- https://dev.mysql.com/doc/refman/5.7/en/data-masking-usage.html 
+- https://dev.mysql.com/doc/refman/8.0/en/data-masking-usage.html 
 
 ## Task 1: Install masking plugin
 
