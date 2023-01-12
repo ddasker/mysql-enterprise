@@ -138,5 +138,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Engineering
-* **Contributors** -  Marco Carlessi, MySQL Engineering
-* **Last Updated By/Date** - <Perside Foster, October 2021
+* **Contributors** -  Dale Dasker, MySQL Engineering
+* **Last Updated By/Date** - <Dale Dasker, January 2023
