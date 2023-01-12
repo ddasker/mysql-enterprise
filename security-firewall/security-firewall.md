@@ -1,12 +1,10 @@
-# SECURITY - DATA MASKING
+# SECURITY - ENTERPRISE FIREWALL
 
 ## Introduction
-3e) Data Masking and de-identification
+MySQL Enterprise Firewall guards against cyber security threats by providing real-time protection against database specific attacks. Any application that has user-supplied input, such as login and personal information fields is at risk. Database attacks don't just come from applications. Data breaches can come from many sources including SQL virus attacks or from employee misuse. Successful attacks can quickly steal millions of customer records containing personal information, credit card, financial, healthcare or other valuable data.
 Objective: Install and use data masking functionalities
 
-Server: serverB
-
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 15 minutes
 
 ### Objectives
 
@@ -116,6 +114,5 @@ This lab assumes you have:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Perside Foster, MySQL Engineering
-* **Contributors** -  Marco Carlessi, MySQL Engineering
-* **Last Updated By/Date** - <Perside Foster, October 2021
+* **Author** - Dale Dasker, MySQL Engineering
+* **Last Updated By/Date** - <Dale Dasker, January 2023
