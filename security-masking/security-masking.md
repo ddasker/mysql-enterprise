@@ -205,7 +205,7 @@ This lab assumes you have:
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_inner(NAME, 1,1, '&') FROM world.city limit 1;</copy>
+    <copy>SELECT mask_inner(last_name, 1,1, '&') FROM employees.employees limit 1;</copy>
     ```
 2. Use data masking random generators to these statements several times
 
