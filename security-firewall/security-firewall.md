@@ -24,29 +24,24 @@ This lab assumes you have:
     - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
     - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
     
-**Server:** serverB
 
 **Notes:**
-- Data masking has more functions than what we test in the lab. The full list of functions is here
-- https://dev.mysql.com/doc/refman/5.7/en/data-masking-usage.html 
+- The detailed documentation for MySQL Enterprise Firewall is located here:
+- https://dev.mysql.com/doc/refman/8.0/en/firewall.html
 
-## Task 1: Install masking plugin
+## Task 1: Install firewall plugin
 
 1. To install the data masking plugin, execute with statements 
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
+    <copy>mysql -uroot -pWelcome1! -e"source /usr/share/mysql-8.0/linux_install_firewall.sql"</copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>INSTALL PLUGIN data_masking SONAME 'data_masking.so';</copy>
-    ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
     <copy>SHOW PLUGINS;</copy>
-    ```
-2. Look for data_masking and check the status? Is it active?
+    ``` 
 
 ## Task 2: Use masking functions
 
