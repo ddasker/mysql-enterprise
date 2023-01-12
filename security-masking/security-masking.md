@@ -1,19 +1,18 @@
 # SECURITY - DATA MASKING
 
 ## Introduction
-3e) Data Masking and de-identification
+Data Masking and de-identification
+MySQL Enterprise Masking and De-identification provides an easy to use, built-in database solution to help organizations protect sensitive data from unauthorized uses by hiding and replacing real values with substitutes.
 Objective: Install and use data masking functionalities
 
-Server: serverB
-
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 12 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create sample data with random generation utilites which are part of Enterprise Masking
+* Test Masking of Sensitive Data
+* Create a View and user which only sees masked data
 
 ### Prerequisites
 
@@ -26,7 +25,6 @@ This lab assumes you have:
     - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
     - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
     
-**Server:** serverB
 
 **Notes:**
 - Data masking has more functions than what we test in the lab. The full list of functions is here
