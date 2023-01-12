@@ -9,9 +9,9 @@ Estimated Lab Time: -- 15 minutes
 ### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Install MySQL Enterprise Firewall
+* Create a couple of MySQL Enterprise Firewall rules
+* Test MySQL Enterprise Firewall
 
 ### Prerequisites
 
