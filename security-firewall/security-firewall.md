@@ -53,17 +53,17 @@ This lab assumes you have:
     <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ``` 
 
-## Task 2: Use masking functions
+## Task 2: Setup Firewall User and Rules
 
-1. Install masking functions
+1. Create user to run Firewall rules on
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
-    <copy>CREATE FUNCTION gen_range RETURNS INTEGER SONAME 'data_masking.so';</copy>
+    <copy>CREATE USER 'fw_user'@'localhost' IDENTIFIED BY 'FWuser1!';</copy>
     ```
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CREATE FUNCTION gen_rnd_email RETURNS STRING SONAME 'data_masking.so';</copy>
+    <copy>GRANT ALL ON *.* TO 'fw_user'@'localhost';</copy>
     ```
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
