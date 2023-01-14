@@ -38,9 +38,19 @@ This lab assumes you have:
     <copy>mysql -uroot -pWelcome1! -e"source /usr/share/mysql-8.0/linux_install_firewall.sql"</copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    b.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>SHOW PLUGINS;</copy>
+    <copy>mysql -uroot -pWelcome1!</copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SHOW GLOBAL VARIABLES LIKE '%firewall%';</copy>
+    ``` 
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ``` 
 
 ## Task 2: Use masking functions
