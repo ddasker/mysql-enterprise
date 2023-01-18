@@ -55,7 +55,7 @@ This lab assumes you have:
 
 ## Task 2: Setup Firewall User and Rules
 
-1. Create user to run Firewall rules on
+1. Create user (fw_user) to run Firewall rules and inspect Information Schema tables: 
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
@@ -67,17 +67,14 @@ This lab assumes you have:
     ```
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CREATE FUNCTION gen_rnd_us_phone RETURNS STRING SONAME 'data_masking.so';</copy>
+    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fw_user'@'localhost';</copy>
     ```
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';</copy>
+    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user'@'localhost';</copy>
     ```
-    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION mask_outer RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-2. Use data masking functions
+
+2. Turn on Recording of SQL commands and then test Firewall
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
