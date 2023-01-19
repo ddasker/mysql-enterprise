@@ -78,7 +78,7 @@ Please note that now you have an instance on the server on port 3306. To connect
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -p -P3306 -h 127.0.0.1 < ./employees.sql</copy>
+    <copy>mysql -uroot -pWelcome1! -P3306 -h 127.0.0.1 < ./employees.sql</copy>
     ```
 
 ## Task 4: Learn Useful SQL Statements
