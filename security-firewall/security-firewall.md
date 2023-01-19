@@ -61,14 +61,17 @@ This lab assumes you have:
     ```
     <copy>CREATE USER 'fw_user'@'localhost' IDENTIFIED BY 'FWuser1!';</copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>GRANT ALL ON *.* TO 'fw_user'@'localhost';</copy>
     ```
+
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fw_user'@'localhost';</copy>
     ```
+
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user'@'localhost';</copy>
@@ -78,11 +81,17 @@ This lab assumes you have:
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_inner(NAME, 1,1) FROM world.city limit 10;</copy>
+    <copy>CALL mysql.sp_set_firewall_mode('fw_user@localhost', 'RECORDING');;</copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT mask_outer(NAME, 1,1) FROM world.city limit 10;</copy>
+    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fw_user'@'localhost';</copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user'@'localhost';</copy>
     ```
 
 ## Task 3: Discussion and use  Masking functions and random generators
