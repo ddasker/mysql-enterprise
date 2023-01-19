@@ -43,12 +43,17 @@ This lab assumes you have:
     <copy>mysql -uroot -pWelcome1!</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    c.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>GRANT FIREWALL_ADMIN ON *.* TO 'root'@'localhost';</copy>
+    ```
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW GLOBAL VARIABLES LIKE '%firewall%';</copy>
     ``` 
 
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ``` 
