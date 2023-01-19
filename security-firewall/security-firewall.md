@@ -86,7 +86,7 @@ This lab assumes you have:
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_set_firewall_mode('fw_user@localhost', 'RECORDING');;</copy>
+    <copy>CALL mysql.sp_set_firewall_mode('fw_user@localhost', 'RECORDING');</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
