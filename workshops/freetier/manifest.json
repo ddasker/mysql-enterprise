@@ -51,17 +51,12 @@
             "filename": "../../security-tde/security-tde.md"
         },
         {
-            "title": "Lab 9: Security - MySQL Firewall",
-            "description": "Security - MySQL Firewall",
-            "filename": "../../security-firewall/security-firewall.md"
-        },
-        {
-            "title": "Lab 10: Security - MySQL Data Masking",
+            "title": "Lab 9: Security - MySQL Data Masking",
             "description": "Security - MySQL Data Masking",
             "filename": "../../security-masking/security-masking.md"
         },
         {
-            "title": "Lab 11: Addemdum",
+            "title": "Lab 10: Addemdum",
             "description": "Addemdum",
             "filename": "../../addendum/addendum.md"
         },
