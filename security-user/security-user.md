@@ -104,27 +104,6 @@ This lab assumes you have:
     <copy>SELECT * FROM employees;</copy>
     ```
 
-2. Switch to the administrative connection revoke privilege on city to appuser
-
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>REVOKE SELECT ON employees.* FROM 'appuser1'@'127.0.0.1';</copy>
-    ```
-
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>SHOW GRANTS FOR 'appuser1'@'127.0.0.1';</copy>
-    ```
-3. Repeat the select on appuser connection for the user. There is a difference?
-
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>SELECT * FROM employees;</copy>
-    ```
-
 ## Task 4: Use appuser1 connection - **** OPTIONAL ****
 1.	Close and reopen the appuser1 connection for the user, then repeat above commands. There is a difference? 
 
