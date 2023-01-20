@@ -44,14 +44,14 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>sudo nano /mysql/etc/my.cnf</copy>
+    <copy>sudo nano /etc/my.cnf</copy>
     ```
 
-    b. Change the line “plugin-load=thread_pool.so” to load the plugin
+    b. Add the line “plugin-load=audit_log.so” to load the plugin at the bottom of the file
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>plugin-load=thread_pool.so;audit_log.so</copy>
+    <copy>plugin-load=audit_log.so</copy>
     ```
 
     c. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
@@ -77,13 +77,7 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysqladmin -uroot -p -h 127.0.0.1 -P3306 shutdown</copy>
-    ```
-
-     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
-    ```
-    <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf $MYSQLD_OPTS &</copy>
+    <copy>sudo service mysqld restart</copy>
     ```
 
      e. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
