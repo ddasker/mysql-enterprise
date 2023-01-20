@@ -85,7 +85,7 @@ Please note that now you have an instance on the server on port 3306. To connect
 
 1. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 
 2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
@@ -149,4 +149,4 @@ Please note that now you have an instance on the server on port 3306. To connect
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, April 2022
+* **Last Updated By/Date** - <Dale Dasker, January 2023
