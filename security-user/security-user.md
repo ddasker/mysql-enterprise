@@ -88,7 +88,7 @@ This lab assumes you have:
    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
-    <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 	b. Run a select on the tables e.g.
 
@@ -137,7 +137,7 @@ This lab assumes you have:
 	**![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
-    <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
