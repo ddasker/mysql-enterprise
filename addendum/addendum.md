@@ -23,15 +23,6 @@ Estimated Lab Time: -- minutes
 7. MySQL Enterprise Router: 
     - mysql-router-commercial-8.0.25-1.1.el7.x86_64.rpm
 
-## Task 2: Download Workshop Files
-1. Download file [my.cnf.first.txt](files/my.cnf.first.txt?download=1)
-2. Download file [my.cnf.replica.txt](files/my.cnf.replica.txt)  
-3. Download file [my.cnf.replica.txt](files/my.cnf.replica.txt)  
-4. Download file [mysqld-advanced02.service.txt](files/mysqld-advanced02.service.txt) 
-5. Download file [mysqlbackup_user_grants.sql](files/mysqlbackup_user_grants.sql)
-6. Download file [my.cnf.secondary-2.txt](files/my.cnf.secondary-2.txt) 
-
-
 
 ## Learn More
 
@@ -41,6 +32,4 @@ Estimated Lab Time: -- minutes
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Perside Foster, MySQL Engineering
-* **Contributors** -  Marco Carlessi, MySQL Engineering
-* **Last Updated By/Date** - <Perside Foster, October 2021
+* **Last Updated By/Date** - <Dale Dasker, January 2023
