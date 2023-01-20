@@ -9,19 +9,19 @@ Estimated Lab Time: -- minutes
 1. MySQL Community Yum Repository: 
     - mysql80-community-release-el7-3.noarch.rpm
 2. MySQL Enterprise Server: 
-    - mysql-commercial-8.0.25-el7-x86_64.tar.gz
+    - mysql-commercial-8.0.31-el8-x86_64.tar.gz
 3. MySQL Enterprise Shell: 
-    - mysql-shell-commercial-8.0.25-1.1.el7.x86_64.rpm
+    - mysql-shell-commercial-8.0.31-1.1.el8.x86_64.rpm
 4. MySQL Enterprise Client
-    - mysql-commercial-client-8.0.25-1.1.el7.x86_64.rpm
-    - mysql-commercial-common-8.0.25-1.1.el7.x86_64.rpm
-    - mysql-commercial-libs-8.0.25-1.1.el7.x86_64.rpm
-    - mysql-commercial-libs-compat-8.0.25-1.1.el7.x86_64.rpm
+    - mysql-commercial-client-8.0.31-1.1.el8.x86_64.rpm
+    - mysql-commercial-common-8.0.31-1.1.el8.x86_64.rpm
+    - mysql-commercial-libs-8.0.31-1.1.el8.x86_64.rpm
+    - mysql-commercial-libs-compat-8.0.31-1.1.el8.x86_64.rpm
 5. MySQL Enterprise Monitor:
-    - mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin
-    - mysqlmonitoragent-8.0.25.1328-linux-x86-64bit-installer.bin
+    - mysqlmonitor-8.0.31.1328-linux-x86_64-installer.bin
+    - mysqlmonitoragent-8.0.31.1328-linux-x86-64bit-installer.bin
 7. MySQL Enterprise Router: 
-    - mysql-router-commercial-8.0.25-1.1.el7.x86_64.rpm
+    - mysql-router-commercial-8.0.31-1.1.el8.x86_64.rpm
 
 
 ## Learn More
