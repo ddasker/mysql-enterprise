@@ -50,6 +50,7 @@ This lab assumes you have:
     ```
     <copy>sudo nano /etc/my.cnf</copy>
     ```
+
     b. Add the following lines to load the plugin and set the encrypted key file
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
@@ -69,11 +70,6 @@ This lab assumes you have:
     ```
     <copy>sudo service mysqld restart</copy>
     ```
-     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf $MYSQLD_OPTS &</copy>
-    ```
-
 
 3.	"Spy" on employees.employees table
 
