@@ -40,21 +40,28 @@ This lab assumes you have:
 
 2. Enable Audit Log on mysql-enterprise (remember: you can’t install on mysql-gpl).  Audit is an Enterprise plugin.
 
-    a. Edit the my.cnf setting in /mysql/etc/my.cnf
+     a. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+
+    ```
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306 < /usr/share/mysql-8.0/audit_log_filter_linux_install.sql</copy>
+    ```
+
+    b. Edit the my.cnf setting in /mysql/etc/my.cnf
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>sudo nano /etc/my.cnf</copy>
     ```
 
-    b. Add the line “plugin-load=audit_log.so” to load the plugin at the bottom of the file
+    c. Add the line “plugin-load=audit_log.so” to load the plugin at the bottom of the file
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>plugin-load=audit_log.so</copy>
     ```
 
-    c. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
+    d. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
@@ -78,13 +85,6 @@ This lab assumes you have:
 
     ```
     <copy>sudo service mysqld restart</copy>
-    ```
-
-     e. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
-    ```
-    <copy>mysql -uroot -p -h 127.0.0.1 -P 3306 < /workshop/audit_log_filter_linux_install.sql</copy>
     ```
 
 3. Connect to your mysql-enterprise with administrative user
