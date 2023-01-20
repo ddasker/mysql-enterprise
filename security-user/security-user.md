@@ -125,7 +125,7 @@ This lab assumes you have:
     <copy>SELECT * FROM employees;</copy>
     ```
 
-## Task 4: Use appuser1 connection
+## Task 4: Use appuser1 connection - **** OPTIONAL ****
 1.	Close and reopen the appuser1 connection for the user, then repeat above commands. There is a difference? 
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
