@@ -122,7 +122,7 @@ This lab assumes you have:
     c. Peek on the mysql System Tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>strings "/mysql/data/mysql.ibd" | head -n70</copy>
+    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
     ```
 
     d. Encrypt the mysql System Tables:
@@ -134,7 +134,7 @@ This lab assumes you have:
     e. Validate encryption of the mysql System Tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>strings "/mysql/data/mysql.ibd" | head -n70</copy>
+    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
     ```
 
     f. Show all the encrypted tables:
@@ -152,4 +152,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
 * **Contributors** -  
-* **Last Updated By/Date** - <Dale Dasker, March 2022
+* **Last Updated By/Date** - <Dale Dasker, January 2023
