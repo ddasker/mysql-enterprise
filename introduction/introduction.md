@@ -24,7 +24,6 @@ In this workshop, you will learn how to work with
 - MySQL Shell
 - MySQL Enterprise Audit
 - MySQL Enterprise Transparent Data Encryption 
-- MySQL Enterprise FireWall
 - MySQL Enterprise Data Masking
 
 ## Learn More
@@ -32,7 +31,6 @@ In this workshop, you will learn how to work with
 * [MySQL Home Page](https://www.mysql.com/)
 * [MySQL Enterprise Audit](https://dev.mysql.com/doc/refman/8.0/en/audit-log.html)
 * [MySQL Enterprise Transparent Data Encryption](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
-* [MySQL Enterprise FireWall](https://dev.mysql.com/doc/refman/8.0/en/firewall.html)
 * [MySQL Enterprise Data Masking](https://dev.mysql.com/doc/refman/8.0/en/data-masking.html)
 
 ## Acknowledgements
