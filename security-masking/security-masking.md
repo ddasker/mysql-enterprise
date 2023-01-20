@@ -176,6 +176,7 @@ This lab assumes you have:
     <copy>SELECT * FROM employees.employees_mask LIMIT 5;</copy>
     ```
 
+
 ## Task 4: *** OPTIONAL *** Discussion and use  Masking functions and random generators
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
