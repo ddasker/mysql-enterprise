@@ -55,7 +55,7 @@ This lab assumes you have:
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>CREATE FUNCTION gen_range RETURNS INTEGER SONAME 'data_masking.so';
-    CREATE FUNCTION gen_rnd_email RETURNS STRING SONAME 'data_masking.so;
+    CREATE FUNCTION gen_rnd_email RETURNS STRING SONAME 'data_masking.so';
     CREATE FUNCTION gen_rnd_us_phone RETURNS STRING SONAME 'data_masking.so';
     CREATE FUNCTION gen_rnd_ssn RETURNS STRING SONAME 'data_masking.so';
     CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';
