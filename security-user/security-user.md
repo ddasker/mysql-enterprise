@@ -79,20 +79,6 @@ This lab assumes you have:
     <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser2'@'127.0.0.1';</copy>
     ```
 
-2. Using the Administrative Connection, create another new user and restrict the user to your “Server” IP
-
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>CREATE USER 'appuser3'@'127.0.0.1' IDENTIFIED BY 'Welcome1!';</copy>
-    ```
-
-	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-
-    ```
-    <copy>GRANT ALL PRIVILEGES ON employees.* TO 'appuser3'@'127.0.0.1';</copy>
-    ```
-
 ## Task 3: Connect to a second mysql-enterprise on Server
 
 1. Open a new SSH connection on Server and from there connect to mysql-enterprise with appuser1
