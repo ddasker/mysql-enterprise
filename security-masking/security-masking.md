@@ -63,30 +63,7 @@ This lab assumes you have:
     CREATE FUNCTION mask_ssn RETURNS STRING SONAME 'data_masking.so';
     </copy>
     ```
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION gen_rnd_email RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION gen_rnd_us_phone RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION gen_rnd_ssn RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION mask_outer RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
-    g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>CREATE FUNCTION mask_ssn RETURNS STRING SONAME 'data_masking.so';</copy>
-    ```
+
 2. Use data masking functions
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
@@ -114,63 +91,56 @@ This lab assumes you have:
     <copy>INSERT INTO employees_mask SELECT * FROM employees;</copy>
     ```
 
-3. Add data to newly created table
-
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
-    ```
-    <copy>INSERT INTO employees_mask SELECT * FROM employees;</copy>
-    ```
-
-4. Create new column for SSN's
+3. Create new column for SSN's
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>ALTER TABLE employees_mask ADD COLUMN ssn varchar(11);</copy>
     ```
 
-5. Create new column for emails's
+4. Create new column for emails's
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>ALTER TABLE employees_mask ADD COLUMN email varchar(40);</copy>
     ```
 
-6. Use Functions to generate sample SSN data
+5. Use Functions to generate sample SSN data
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>UPDATE employees_mask SET ssn = gen_rnd_ssn() WHERE 1;</copy>
     ```
 
-7. Use Functions to generate sample Email data
+6. Use Functions to generate sample Email data
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>UPDATE employees_mask SET email = gen_rnd_email() WHERE 1;</copy>
     ```
 
-8. Let's look at the data that we just created
+7. Let's look at the data that we just created
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>SELECT * FROM employees_mask LIMIT 5;</copy>
     ```
 
-9. Let's mask the SSN
+8. Let's mask the SSN
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>SELECT emp_no,first_name,last_name,mask_ssn(CONVERT(ssn USING latin1)) AS ssn FROM employees_mask LIMIT 5;</copy>
     ```
 
-10. Let's create a view which only shows the masked data
+9. Let's create a view which only shows the masked data
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>CREATE VIEW masked_customer AS SELECT emp_no,first_name,last_name,mask_ssn(CONVERT(ssn USING latin1)) AS ssn FROM employees_mask;</copy>
     ```
 
-11. Let's create a user who only has access to the view with the masked data
+10. Let's create a user who only has access to the view with the masked data
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
@@ -182,7 +152,7 @@ This lab assumes you have:
     <copy>GRANT SELECT ON employees.masked_customer TO 'accounting'@'%';</copy>
     ```
 
-12. Log in with new user account and run queries
+11. Log in with new user account and run queries
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
@@ -199,7 +169,7 @@ This lab assumes you have:
     <copy>SELECT * FROM employees.masked_customer LIMIT 5;</copy>
     ```
 
-13. Try accessing table that is not masked
+12. Try accessing table that is not masked
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
