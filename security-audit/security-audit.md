@@ -91,7 +91,7 @@ This lab assumes you have:
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 
     a. Using the Administrative Connection, create a Audit Filter for all activity and all users. Privileges required are AUDIT_ADMIN and SUPER
