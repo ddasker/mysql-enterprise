@@ -67,7 +67,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>mysqladmin -uroot -p -h 127.0.0.1 -P3306 shutdown</copy>
+    <copy>sudo service mysqld restart</copy>
     ```
      **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
