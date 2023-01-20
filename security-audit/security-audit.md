@@ -113,7 +113,7 @@ This lab assumes you have:
     c. Monitor the output of the audit.log file:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>tail -f /mysql/data/audit.log</copy>
+    <copy>sudo tail -f /var/lib/mysql/audit.log</copy>
     ```
 
 ## Task 2: Use Audit
@@ -123,7 +123,7 @@ This lab assumes you have:
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -169,7 +169,7 @@ This lab assumes you have:
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser1 -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -229,7 +229,7 @@ This lab assumes you have:
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -250,12 +250,18 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+
+    ```
+    <copy>quit;</copy>
+    ```
+
 6. Login to mysql-enterprise with the user “appuser2”, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser2 -p -h127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser2 -pWelcome1! -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -307,7 +313,7 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h127.0.0.1 -P 3306</copy>
     ```
 
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -378,7 +384,7 @@ This lab assumes you have:
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -u appuser1 -p -h127.0.0.1 -P 3306</copy>
+    <copy>mysql -u appuser1 -pWelcome1! -h127.0.0.1 -P 3306</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -410,13 +416,13 @@ This lab assumes you have:
    a. Check existing filters:
    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
-    <copy>SELECT * FROM mysql.audit_log_filter;</copy>
+    <copy>SELECT * FROM mysql.audit_log_filter\G</copy>
     ```
 
    b. Check Users being Audited:
    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
-    <copy>SELECT * FROM mysql.audit_log_user;</copy>
+    <copy>SELECT * FROM mysql.audit_log_user\G</copy>
     ```
 
    c. Reading from Audit Log within MySQL Client
@@ -453,4 +459,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, March 2022
+* **Last Updated By/Date** - <Dale Dasker, January 2023
