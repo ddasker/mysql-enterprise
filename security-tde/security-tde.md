@@ -35,7 +35,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -u root -p -P3306 -h127.0.0.1 </copy>
+    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
     ```
 2.	Check to see if any keyring plugin is installed and load if not:
 
@@ -44,11 +44,11 @@ This lab assumes you have:
     <copy>SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'keyring%'; </copy>
     ```
 
-    b. Edit the my.cnf setting in /mysql/etc/my.cnf
+    b. Edit the my.cnf setting in /etc/my.cnf
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo nano /mysql/etc/my.cnf</copy>
+    <copy>sudo nano /etc/my.cnf</copy>
     ```
     b. Add the following lines to load the plugin and set the encrypted key file
 
