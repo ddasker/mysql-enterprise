@@ -57,7 +57,7 @@ This lab assumes you have:
     <copy>early-plugin-load=keyring_encrypted_file.so</copy>    
     ```
     ```
-    <copy>keyring_encrypted_file_data=/mysql/data/mysql-keyring/keyring-encrypted</copy>    
+    <copy>keyring_encrypted_file_data=/var/lib/mysql-keyring/keyring-encrypted</copy>    
     ```
     ```
     <copy>keyring_encrypted_file_password=V&rySec4eT</copy>    
