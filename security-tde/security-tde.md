@@ -75,7 +75,7 @@ This lab assumes you have:
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>strings "/mysql/data/employees/employees.ibd" | head -n50</copy>
+    <copy>sudo strings "/var/lib/mysql/employees/employees.ibd" | head -n50</copy>
     ```
 
 
@@ -83,7 +83,7 @@ This lab assumes you have:
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -u root -p -P3306 -h127.0.0.1 </copy>
+    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
