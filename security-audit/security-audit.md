@@ -285,6 +285,7 @@ This lab assumes you have:
 7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables
 
     a. Remove previous filter:
+
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```

@@ -36,7 +36,7 @@ This lab assumes you have:
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -p -h 127.0.0.1 -P 3306</copy>
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
@@ -208,6 +208,4 @@ This lab assumes you have:
 * [Whitepaper: MySQL Secure Deployment Guide](https://dev.mysql.com/doc/mysql-secure-deployment-guide/8.0/en/)
 
 ## Acknowledgements
-* **Author** - Perside Foster, MySQL Engineering
-* **Contributors** -  Dale Dasker, MySQL Engineering
 * **Last Updated By/Date** - <Dale Dasker, January 2023
