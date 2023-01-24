@@ -150,7 +150,7 @@ This lab assumes you have:
     ```   
 4.	Close and reopen appuser session, do you see schemas?
 
-## Task 5: Restore user privileges
+## Task 5: Restore user privileges  **** OPTIONAL ****
 1.	Using the administrative connection restore user privileges to reuse it in next labs
 
 	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
