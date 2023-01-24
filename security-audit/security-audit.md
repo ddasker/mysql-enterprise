@@ -55,6 +55,7 @@ This lab assumes you have:
     ```
 
     c. Add the following lines to the bottom of the file.  These lines will make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB and format of data is JSON.
+
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
@@ -65,6 +66,7 @@ This lab assumes you have:
     ```
 
     d. Restart MySQL (you can configure audit without restart the server, but here we show how to set the configuration file)
+
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
@@ -79,6 +81,7 @@ This lab assumes you have:
     ```
 
     a. Using the Administrative Connection, create a Audit Filter for all activity and all users. Privileges required are AUDIT_ADMIN and SUPER
+
  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT audit_log_filter_set_filter('log_all', '{ "filter": { "log": true } }');</copy>
