@@ -55,13 +55,9 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>early-plugin-load=keyring_encrypted_file.so</copy>    
-    ```
-    ```
-    <copy>keyring_encrypted_file_data=/var/lib/mysql-keyring/keyring-encrypted</copy>    
-    ```
-    ```
-    <copy>keyring_encrypted_file_password=V&rySec4eT</copy>    
+    <copy>early-plugin-load=keyring_encrypted_file.so    
+    keyring_encrypted_file_data=/var/lib/mysql-keyring/keyring-encrypted    
+    keyring_encrypted_file_password=V&rySec4eT</copy>    
     ```
 
     c. Restart MySQL
@@ -151,5 +147,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Contributors** -  
 * **Last Updated By/Date** - <Dale Dasker, January 2023
