@@ -54,8 +54,7 @@ This lab assumes you have:
     <copy>sudo nano /etc/my.cnf</copy>
     ```
 
-    c. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
-    c. Add the line “plugin-load=audit_log.so” to load the plugin at the bottom of the file
+    c. Add the following lines to the bottom of the file.  These lines will make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB and format of data is JSON.
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
@@ -63,25 +62,6 @@ This lab assumes you have:
     audit_log=FORCE_PLUS_PERMANENT
     audit_log_rotate_on_size=20971520
     audit_log_format=JSON</copy>
-    ```
-
-    d. below the previous add these lines to make sure that the audit plugin can't be unloaded and that the file is automatically rotated at 20 MB
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
-    ```
-    <copy>audit_log=FORCE_PLUS_PERMANENT</copy>
-    ```
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
-    ```
-    <copy>audit_log_rotate_on_size=20971520</copy>
-    ```
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-
-    ```
-    <copy>audit_log_format=JSON</copy>
     ```
 
     d. Restart MySQL (you can configure audit without restart the server, but here we show how to set the configuration file)
