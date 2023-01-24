@@ -26,7 +26,6 @@ This lab assumes you have:
     
 
 **Notes:**
-- References
 - [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
 
 
