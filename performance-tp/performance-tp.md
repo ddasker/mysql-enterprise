@@ -1,5 +1,16 @@
 # SECURITY - MYSQL ENTERPRISE TRANSPARENT DATA ENCRYPTION
 
+## NOTES
+Install EPEL repository:
+     sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+Install pre-built SysBench:
+    sudo yum -y install sysbench-1.0.20-1.el7.x86_64.rpm
+
+Install Plugins:
+    [mysqld]
+     plugin-load-add=thread_pool.so
+
+
 ## Introduction
 3c) MySQL Enterprise Transparent Data Encryption
 Objective: Data Encryption in action…
