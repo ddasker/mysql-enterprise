@@ -10,6 +10,8 @@ Install Plugins:
     [mysqld]
      plugin-load-add=thread_pool.so
 
+Increase number of connections that MySQL allows:
+    mysql> SET PERSIST max_connections = 8000;
 
 ## Introduction
 3c) MySQL Enterprise Transparent Data Encryption
