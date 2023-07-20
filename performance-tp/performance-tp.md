@@ -3,8 +3,15 @@
 ## NOTES
 Install EPEL repository:
      sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
 Install pre-built SysBench:
     sudo yum -y install sysbench-1.0.20-1.el7.x86_64.rpm
+
+As root, change the ulimit to 100000
+    sudo ulimit -n 100000
+
+Setup sysBench database:
+    mysql> CREATE DATABASE sybench;
 
 Install Plugins:
     [mysqld]
@@ -12,6 +19,9 @@ Install Plugins:
 
 Increase number of connections that MySQL allows:
     mysql> SET PERSIST max_connections = 8000;
+
+Increase number of prepared statements for sysBench:
+    mysql> SET PERSIST max_prepared_stmt_count = 64000;
 
 ## Introduction
 3c) MySQL Enterprise Transparent Data Encryption
