@@ -10,18 +10,36 @@ Install pre-built SysBench:
 As root, change the ulimit to 100000
     sudo ulimit -n 100000
 
+Setup Linux for more connections:
+    sudo vi /etc/security/limits.conf 
+
+    *                soft    nofile          131072
+    *                hard    nofile          131072
+    *                soft    nproc           65536
+    *                hard    nproc           65536
+
+Setup Linux for more connections:
+    sudo sysctl net.ipv4.tcp_max_syn_backlog=30000
+    sudo sysctl net.core.netdev_max_backlog=30000
+    sudo sysctl net.core.somaxconn=30000
+
+Adding benchmarking user
+    mysql> CREATE USER 'dim'@'%' IDENTIFIED BY 'Welcome1!';
+    mysql> GRANT ALL ON *.* TO 'dim'@'%';
+
 Setup sysBench database:
-    mysql> CREATE DATABASE sybench;
+    mysql> CREATE DATABASE sysbench;
+
+Configure MySQL for more connections:
+    [mysqld]
+    max_connections=30000
+    back_log=30000
+    max_prepared_stmt_count=64000
 
 Install Plugins:
     [mysqld]
      plugin-load-add=thread_pool.so
 
-Increase number of connections that MySQL allows:
-    mysql> SET PERSIST max_connections = 8000;
-
-Increase number of prepared statements for sysBench:
-    mysql> SET PERSIST max_prepared_stmt_count = 64000;
 
 ## Introduction
 3c) MySQL Enterprise Transparent Data Encryption
