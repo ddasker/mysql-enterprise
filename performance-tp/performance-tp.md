@@ -1,4 +1,4 @@
-# SECURITY - MYSQL ENTERPRISE TRANSPARENT DATA ENCRYPTION
+# PERFORMANCE - MYSQL ENTERPRISE SCALABILITY (THREAD POOLING)
 
 ## NOTES
 
@@ -34,7 +34,7 @@ Install Plugins:
 
 
 ## Introduction
-3c) MySQL Enterprise Thread Pooling
+MySQL Enterprise Thread Pooling
 Objective: Thread Pooling in action…
 
 This lab will walk you through benchmarking Thread Pooling
