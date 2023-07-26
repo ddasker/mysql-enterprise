@@ -1,10 +1,34 @@
 # PERFORMANCE - MYSQL ENTERPRISE SCALABILITY (THREAD POOLING)
 
-## NOTES
+## Introduction
+Performance enhancements
+MySQL Enterprise Scalability provides an easy to use, built-in database solution to increase performance during heavy periods of application connections.
+Objective: Install and use Thread Pooling functionalities
 
-## As root, change the ulimit to 100000
-##    sudo ulimit -n 100000
+Estimated Lab Time: -- 40 minutes
 
+### Objectives
+
+In this lab, you will:
+* Create sample data with random generation utilites which are part of Enterprise Masking
+* Test Masking of Sensitive Data
+* Create a View and user which only sees masked data
+
+### Prerequisites
+
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
+
+* Lab standard  
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
+    
+
+**Notes:**
+- Thread Pooling has more functions than what we test in the lab. The full list of functions is here
+- https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
 Setup Linux for more connections:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
