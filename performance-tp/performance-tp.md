@@ -2,29 +2,45 @@
 
 ## NOTES
 Install EPEL repository:
-     sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
+    ```
 
-Install pre-built SysBench:
-    sudo yum -y install sysbench-1.0.20-1.el7.x86_64.rpm
+Install all RPMs:
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>sudo yum -y install *.rpm</copy>
+    ```
 
 As root, change the ulimit to 100000
     sudo ulimit -n 100000
 
 Setup Linux for more connections:
-    sudo vi /etc/security/limits.conf 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>sudo vi /etc/security/limits.conf</copy>
+    ```
 
+    ```
+    <copy>
     *                soft    nofile          131072
     *                hard    nofile          131072
     *                soft    nproc           65536
-    *                hard    nproc           65536
+    *                hard    nproc           65536</copy>
+    ```
 
 Setup Linux for more connections:
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>
     sudo sysctl net.ipv4.tcp_max_syn_backlog=30000
     sudo sysctl net.core.netdev_max_backlog=30000
-    sudo sysctl net.core.somaxconn=30000
+    sudo sysctl net.core.somaxconn=30000</copy>
+    ```
 
 Adding benchmarking user
-    mysql> CREATE USER 'dim'@'%' IDENTIFIED BY 'Welcome1!';
+    mysql> CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY "Welcome1!";
     mysql> GRANT ALL ON *.* TO 'dim'@'%';
 
 Setup sysBench database:
