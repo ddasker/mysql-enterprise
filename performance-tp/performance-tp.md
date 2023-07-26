@@ -87,7 +87,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy *                soft    nofile          131072
+    <copy> *                soft    nofile          131072
     *                hard    nofile          131072
     *                soft    nproc           65536
     *                hard    nproc           65536</copy>    
