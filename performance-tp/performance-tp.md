@@ -2,28 +2,9 @@
 
 ## NOTES
 
-Install all RPMs:
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>sudo yum -y install *.rpm</copy>
-    ```
+## As root, change the ulimit to 100000
+##    sudo ulimit -n 100000
 
-As root, change the ulimit to 100000
-    sudo ulimit -n 100000
-
-Setup Linux for more connections:
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>sudo vi /etc/security/limits.conf</copy>
-    ```
-
-    ```
-    <copy>
-    *                soft    nofile          131072
-    *                hard    nofile          131072
-    *                soft    nproc           65536
-    *                hard    nproc           65536</copy>
-    ```
 
 Setup Linux for more connections:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
