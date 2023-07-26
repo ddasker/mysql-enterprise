@@ -1,11 +1,6 @@
 # SECURITY - MYSQL ENTERPRISE TRANSPARENT DATA ENCRYPTION
 
 ## NOTES
-Install EPEL repository:
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
-    ```
 
 Install all RPMs:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
@@ -58,17 +53,17 @@ Install Plugins:
 
 
 ## Introduction
-3c) MySQL Enterprise Transparent Data Encryption
-Objective: Data Encryption in action…
+3c) MySQL Enterprise Thread Pooling
+Objective: Thread Pooling in action…
 
-This lab will walk you through encrypting InnoDB Tablespace files at rest
+This lab will walk you through benchmarking Thread Pooling
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Install and encrypt Data Files
+* Install and setup benchmarking tools
 
 ### Prerequisites (Optional)
 
@@ -86,34 +81,35 @@ This lab assumes you have:
 - [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
 
 
-## Task 1: Install and setup TDE  
-1.	Install MySQL Enterprise Transparent Data Encrytption on mysql-enterprise using Administrative MySQL client connections 
-
+## Task 1: Install and setup Benchmarks  
+1.	Install EPEL Repository and sysbench
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
-    ```
-2.	Check to see if any keyring plugin is installed and load if not:
-
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'keyring%'; </copy>
+    <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
     ```
 
-    b. Edit the my.cnf setting in /etc/my.cnf
+2.	Install all RPMs:
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    
+    ```
+    <copy>sudo yum -y install *.rpm</copy>
+    ```
+
+    b. Edit the /etc/security/limits.conf
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo nano /etc/my.cnf</copy>
+    <copy>sudo nano /etc/security/limits.conf</copy>
     ```
 
     b. Add the following lines to load the plugin and set the encrypted key file
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>early-plugin-load=keyring_encrypted_file.so    
-    keyring_encrypted_file_data=/var/lib/mysql-keyring/keyring-encrypted    
-    keyring_encrypted_file_password=V&rySec4eT</copy>    
+    <copy *                soft    nofile          131072
+    *                hard    nofile          131072
+    *                soft    nproc           65536
+    *                hard    nproc           65536</copy>    
     ```
 
     c. Restart MySQL
