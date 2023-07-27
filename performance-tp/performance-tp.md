@@ -57,34 +57,6 @@ Install Plugins:
      plugin-load-add=thread_pool.so
 
 
-## Introduction
-MySQL Enterprise Thread Pooling
-Objective: Thread Pooling in action…
-
-This lab will walk you through benchmarking Thread Pooling
-
-Estimated Lab Time: 40 minutes
-
-### Objectives
-
-In this lab, you will:
-* Install and setup benchmarking tools
-
-### Prerequisites (Optional)
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-* Lab standard  
-    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
-    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
-    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
-    
-
-**Notes:**
-- [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
-
 
 ## Task 1: Install and setup Benchmarks  
 1.	Install EPEL Repository and sysbench
@@ -124,13 +96,35 @@ This lab assumes you have:
     <copy>sudo service mysqld restart</copy>
     ```
 
-3.	"Spy" on employees.employees table
+3.	Install the Thread Pool plugin
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    
     ```
-    <copy>sudo strings "/var/lib/mysql/employees/employees.ibd" | head -n50</copy>
+    <copy>sudo nano /etc/my.cnf</copy>
     ```
 
+    b. Add the following lines to load the plugin
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>plugin-load-add=thread_pool.so</copy>    
+    ```
+
+    c. Restart MySQL
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo service mysqld restart</copy>
+    ```
+
+    d. Confirm that the plugin has been loaded
+    
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -e"SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS
+       WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
+    ```
 
 4.	Now we enable Encryption on the employees.employees table:
 
