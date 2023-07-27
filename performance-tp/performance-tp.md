@@ -43,19 +43,11 @@ Adding benchmarking user
     mysql> CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY "Welcome1!";
     mysql> GRANT ALL ON *.* TO 'dim'@'%';
 
-Setup sysBench database:
-    mysql> CREATE DATABASE sysbench;
-
 Configure MySQL for more connections:
     [mysqld]
     max_connections=30000
     back_log=30000
     max_prepared_stmt_count=64000
-
-Install Plugins:
-    [mysqld]
-     plugin-load-add=thread_pool.so
-
 
 
 ## Task 1: Install and setup Benchmarks  
@@ -66,8 +58,10 @@ Install Plugins:
     ```
 
 2.	Install all RPMs:
-    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    
+
+    a. Run Yum 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo yum -y install *.rpm</copy>
     ```
@@ -96,7 +90,31 @@ Install Plugins:
     <copy>sudo service mysqld restart</copy>
     ```
 
-3.	Install the Thread Pool plugin
+3.	Setup the benchmarking 
+
+    a. Create the sample database
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    
+    ```
+    <copy>mysql -uroot -pWelcome1! -e"CREATE DATABASE sysbench"</copy>
+    ```
+
+    b. Create the benchmark user
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -e"CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';"</copy>
+    <copy>mysql -uroot -pWelcome1! -e"GRANT ALL ON *.* TO 'dim'@'%'";</copy>
+    ```
+
+    c. Add the following lines to load the plugin
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+
+
+4.	Install the Thread Pool plugin
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     
@@ -126,7 +144,7 @@ Install Plugins:
        WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
     ```
 
-4.	Now we enable Encryption on the employees.employees table:
+5.	Now we enable Encryption on the employees.employees table:
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
@@ -144,7 +162,7 @@ Install Plugins:
     ```
 
 
-5.	"Spy" on employees.employees table again:
+6.	"Spy" on employees.employees table again:
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
@@ -152,7 +170,113 @@ Install Plugins:
     ```
 
 
-6.	Administrative commands
+7.	Administrative commands
+
+    a. Get details on encrypted key file:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SHOW VARIABLES LIKE 'keyring_encrypted_file_data'\G</copy>
+    ```
+
+    b. Set default for all tables to be encrypted when creating them:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SET GLOBAL default_table_encryption=ON;</copy>
+    ```
+
+    c. Peek on the mysql System Tables:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
+    ```
+
+    d. Encrypt the mysql System Tables:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>ALTER TABLESPACE mysql ENCRYPTION = 'Y';</copy>
+    ```
+
+    e. Validate encryption of the mysql System Tables:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
+    ```
+
+    f. Show all the encrypted tables:
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT SPACE, NAME, SPACE_TYPE, ENCRYPTION FROM INFORMATION_SCHEMA.INNODB_TABLESPACES WHERE ENCRYPTION='Y'\G</copy>
+    ```
+
+
+## Learn More
+
+* [Keyring Plugins](https://dev.mysql.com/doc/refman/8.0/en/keyring.html)
+* [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
+
+## Acknowledgements
+* **Author** - Dale Dasker, MySQL Solution Engineering
+* **Last Updated By/Date** - <Dale Dasker, January 2023
+
+
+
+4.	Install the Thread Pool plugin
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    
+    ```
+    <copy>sudo nano /etc/my.cnf</copy>
+    ```
+
+    b. Add the following lines to load the plugin
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>plugin-load-add=thread_pool.so</copy>    
+    ```
+
+    c. Restart MySQL
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo service mysqld restart</copy>
+    ```
+
+    d. Confirm that the plugin has been loaded
+    
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -e"SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS
+       WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
+    ```
+
+5.	Now we enable Encryption on the employees.employees table:
+
+    a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
+    ```
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+    ```
+    <copy>USE employees;</copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>ALTER TABLE employees ENCRYPTION = 'Y';</copy>
+    ```
+
+
+6.	"Spy" on employees.employees table again:
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo strings "/var/lib/mysql/employees/employees.ibd" | head -n50</copy>
+    ```
+
+
+7.	Administrative commands
 
     a. Get details on encrypted key file:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
