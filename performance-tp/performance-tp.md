@@ -30,14 +30,6 @@ This lab assumes you have:
 - Thread Pooling has more functions than what we test in the lab. The full list of functions is here
 - https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
-Setup Linux for more connections:
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>
-    sudo sysctl net.ipv4.tcp_max_syn_backlog=30000
-    sudo sysctl net.core.netdev_max_backlog=30000
-    sudo sysctl net.core.somaxconn=30000</copy>
-    ```
 
 Adding benchmarking user
     mysql> CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY "Welcome1!";
@@ -83,7 +75,17 @@ Configure MySQL for more connections:
     *                hard    nproc           65536</copy>    
     ```
 
-    c. Restart MySQL
+    c. Setup OS for more open files 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo sysctl net.ipv4.tcp_max_syn_backlog=30000
+    sudo sysctl net.core.netdev_max_backlog=30000
+    sudo sysctl net.core.somaxconn=30000</copy>
+    ```
+
+
+    d. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
