@@ -10,8 +10,8 @@ Estimated Lab Time: -- 40 minutes
 ### Objectives
 
 In this lab, you will:
-* Create sample data with random generation utilites which are part of Enterprise Masking
-* Test Masking of Sensitive Data
+* Install and test out sysBench
+* Install  Masking of Sensitive Data
 * Create a View and user which only sees masked data
 
 ### Prerequisites
