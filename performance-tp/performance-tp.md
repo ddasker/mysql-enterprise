@@ -319,9 +319,9 @@ Configure MySQL for more connections:
 
 ## Learn More
 
-* [Keyring Plugins](https://dev.mysql.com/doc/refman/8.0/en/keyring.html)
-* [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
+* [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/keyring.html)
+* [sysBench code](https://github.com/akopytov/sysbench/tree/master)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, January 2023
+* **Last Updated By/Date** - <Dale Dasker, August 2023
