@@ -319,8 +319,9 @@ Configure MySQL for more connections:
 
 ## Learn More
 
-* [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/keyring.html)
+* [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html)
 * [sysBench code](https://github.com/akopytov/sysbench/tree/master)
+* [sysBench useage](https://www.mortensi.com/2021/06/how-to-install-and-use-sysbench/)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
