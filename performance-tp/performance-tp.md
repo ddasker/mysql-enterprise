@@ -11,8 +11,10 @@ Estimated Lab Time: -- 40 minutes
 
 In this lab, you will:
 * Install and test out sysBench
-* Install  Masking of Sensitive Data
-* Create a View and user which only sees masked data
+* Install BMK Toolkit
+* Run benchmarks with increasing number of connections
+* Install Thread Pool
+* Run benchmarks with increasing number of connections
 
 ### Prerequisites
 
@@ -153,17 +155,6 @@ Configure MySQL for more connections:
     <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
-    ```
-    <copy>USE employees;</copy>
-    ```
-
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>ALTER TABLE employees ENCRYPTION = 'Y';</copy>
-    ```
-
-
 6.	"Spy" on employees.employees table again:
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
@@ -178,142 +169,6 @@ Configure MySQL for more connections:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW VARIABLES LIKE 'keyring_encrypted_file_data'\G</copy>
-    ```
-
-    b. Set default for all tables to be encrypted when creating them:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SET GLOBAL default_table_encryption=ON;</copy>
-    ```
-
-    c. Peek on the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
-    ```
-
-    d. Encrypt the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>ALTER TABLESPACE mysql ENCRYPTION = 'Y';</copy>
-    ```
-
-    e. Validate encryption of the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
-    ```
-
-    f. Show all the encrypted tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SELECT SPACE, NAME, SPACE_TYPE, ENCRYPTION FROM INFORMATION_SCHEMA.INNODB_TABLESPACES WHERE ENCRYPTION='Y'\G</copy>
-    ```
-
-
-## Learn More
-
-* [Keyring Plugins](https://dev.mysql.com/doc/refman/8.0/en/keyring.html)
-* [InnoDB Data At Rest](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
-
-## Acknowledgements
-* **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, January 2023
-
-
-
-4.	Install the Thread Pool plugin
-
-    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    
-    ```
-    <copy>sudo nano /etc/my.cnf</copy>
-    ```
-
-    b. Add the following lines to load the plugin
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>plugin-load-add=thread_pool.so</copy>    
-    ```
-
-    c. Restart MySQL
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo service mysqld restart</copy>
-    ```
-
-    d. Confirm that the plugin has been loaded
-    
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>mysql -uroot -pWelcome1! -e"SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS
-       WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
-    ```
-
-5.	Now we enable Encryption on the employees.employees table:
-
-    a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
-    ```
-
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
-    ```
-    <copy>USE employees;</copy>
-    ```
-
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>ALTER TABLE employees ENCRYPTION = 'Y';</copy>
-    ```
-
-
-6.	"Spy" on employees.employees table again:
-
-    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo strings "/var/lib/mysql/employees/employees.ibd" | head -n50</copy>
-    ```
-
-
-7.	Administrative commands
-
-    a. Get details on encrypted key file:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SHOW VARIABLES LIKE 'keyring_encrypted_file_data'\G</copy>
-    ```
-
-    b. Set default for all tables to be encrypted when creating them:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SET GLOBAL default_table_encryption=ON;</copy>
-    ```
-
-    c. Peek on the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
-    ```
-
-    d. Encrypt the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>ALTER TABLESPACE mysql ENCRYPTION = 'Y';</copy>
-    ```
-
-    e. Validate encryption of the mysql System Tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
-    ```
-
-    f. Show all the encrypted tables:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SELECT SPACE, NAME, SPACE_TYPE, ENCRYPTION FROM INFORMATION_SCHEMA.INNODB_TABLESPACES WHERE ENCRYPTION='Y'\G</copy>
     ```
 
 
@@ -325,4 +180,4 @@ Configure MySQL for more connections:
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, August 2023
+* **Last Updated By/Date** - Dale Dasker, August 2023
