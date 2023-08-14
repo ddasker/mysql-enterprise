@@ -146,4 +146,4 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, January 2023
+* **Last Updated By/Date** - Dale Dasker, January 2023

@@ -208,4 +208,4 @@ This lab assumes you have:
 * [Whitepaper: MySQL Secure Deployment Guide](https://dev.mysql.com/doc/mysql-secure-deployment-guide/8.0/en/)
 
 ## Acknowledgements
-* **Last Updated By/Date** - <Dale Dasker, January 2023
+* **Last Updated By/Date** - Dale Dasker, January 2023
