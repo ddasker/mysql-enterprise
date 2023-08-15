@@ -33,10 +33,6 @@ This lab assumes you have:
 - https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
 
-Adding benchmarking user
-    mysql> CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY "Welcome1!";
-    mysql> GRANT ALL ON *.* TO 'dim'@'%';
-
 Configure MySQL for more connections:
     [mysqld]
     max_connections=30000
@@ -112,9 +108,14 @@ Configure MySQL for more connections:
     <copy>mysql -uroot -pWelcome1! -e"GRANT ALL ON *.* TO 'dim'@'%'";</copy>
     ```
 
-    c. Add the following lines to load the plugin
+    c. Setup MySQL to handle many connections
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo vi /etc/my.cnf</copy>:w
+    <copy> max_connections=30000
+    back_log=30000
+    max_prepared_stmt_count=64000</copy>
     ```
 
 
