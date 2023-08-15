@@ -82,7 +82,6 @@ Configure MySQL for more connections:
     sudo sysctl net.core.somaxconn=30000</copy>
     ```
 
-
     d. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
@@ -132,9 +131,19 @@ Configure MySQL for more connections:
     <copy>sudo vi /usr/lib/systemd/system/mysqld.service</copy>
     ```
 
+    e. Modify LimitNOFILE under [Service] section
 
-4.	Install the Thread Pool plugin
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>LimitNOFILE=50000</copy>
+    ```
 
+    f. Restart MySQL
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo service mysqld restart</copy>
+    ```
 
 4.	Install the Thread Pool plugin
 
