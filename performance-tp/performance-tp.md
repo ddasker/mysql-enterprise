@@ -118,6 +118,23 @@ Configure MySQL for more connections:
     max_prepared_stmt_count=64000</copy>
     ```
 
+    d. Determine what file to edit if using systemd for MySQL
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo service mysqld status</copy>
+    ```
+
+    e. Increase number of threads possible for the mysqld daemon
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo vi /usr/lib/systemd/system/mysqld.service</copy>
+    ```
+
+
+4.	Install the Thread Pool plugin
+
 
 4.	Install the Thread Pool plugin
 
