@@ -73,7 +73,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>tar xvf ThreadPoolthreadpoolfiles.tar</copy>
+    <copy>tar xvf threadpool.tar</copy>
     ```
 
 6.	Install EPEL Repository and sysbench
