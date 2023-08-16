@@ -20,7 +20,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* A basic understanding of Cloud Computing.
 
 * Lab standard  
     - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
@@ -34,7 +34,7 @@ This lab assumes you have:
 
 
 
-## Task 1: Install and setup environment  
+## Task 1: Install and setup environment.  These steps can be handled on your own time if you are not able to keep up.    
 
 1.	Setup hardware and networking as described in Lab 1 & Lab 2
 
