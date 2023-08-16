@@ -38,7 +38,7 @@ This lab assumes you have:
 
 1.	Setup hardware and networking as described in Lab 1 & Lab 2
 
-    a. Follow steps listed below.  For Lab 2 where you create the Compute, use a 12 OCPU Core with 1TB of storage.  
+    a. Follow steps listed below.  For Lab 2 where you create the Compute, use a ** 12 OCPU Core ** with ** 1TB of storage **.  
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 *    [Lab 1](https://ddasker.github.io/mysql-enterprise/workshops/freetier/index.html?lab=create-vcn)
 *    [Lab 2](https://ddasker.github.io/mysql-enterprise/workshops/freetier/index.html?lab=create-compute)
