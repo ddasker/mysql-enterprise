@@ -54,14 +54,14 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo mkdir /workshop </copy>
+    <copy>mkdir workshop </copy>
     ```
 
 4.  Download workshop files 
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>cd /workshop </copy>
+    <copy>cd workshop </copy>
     ```
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
