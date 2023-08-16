@@ -134,7 +134,14 @@ This lab assumes you have:
     <copy>LimitNOFILE=50000</copy>
     ```
 
-    f. Restart MySQL
+    f. Reload Daemons
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo systemctl daemon-reload</copy>
+    ```
+
+    g. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
