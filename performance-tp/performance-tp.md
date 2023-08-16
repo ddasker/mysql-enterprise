@@ -83,7 +83,7 @@ This lab assumes you have:
     <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
     ```
 
-3.	Install all RPMs:
+3.	Install all RPMs and Setup MySQL:
 
     a. Run Yum 
 
@@ -92,14 +92,30 @@ This lab assumes you have:
     <copy>sudo yum -y install *.rpm</copy>
     ```
 
-    b. Edit the /etc/security/limits.conf
+    b. Start MySQL daemon
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>sudo systemctl start mysqld</copy>
+    ```
+
+    b. Retrieve root password for first login: 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>sudo grep -i 'temporary password' /var/log/mysqld.log</copy>
+    ```
+
+4.	Setup OS for handling large amount of connections:
+
+    a. Edit the /etc/security/limits.conf
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>sudo nano /etc/security/limits.conf</copy>
     ```
 
-    b. Add the following lines to load the plugin and set the encrypted key file
+    b. Add the following lines
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
