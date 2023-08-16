@@ -105,7 +105,9 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo vi /etc/my.cnf</copy>:w
+    <copy>sudo vi /etc/my.cnf</copy>
+    ```
+    ```
     <copy> max_connections=30000
     back_log=30000
     max_prepared_stmt_count=64000</copy>
