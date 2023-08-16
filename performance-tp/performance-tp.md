@@ -33,12 +33,6 @@ This lab assumes you have:
 - https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
 
-Configure MySQL for more connections:
-    [mysqld]
-    max_connections=30000
-    back_log=30000
-    max_prepared_stmt_count=64000
-
 
 ## Task 1: Install and setup Benchmarks  
 1.	Install EPEL Repository and sysbench
