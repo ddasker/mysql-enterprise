@@ -73,7 +73,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo tar xvf ThreadPoolthreadpoolfiles.tar</copy>
+    <copy>tar xvf ThreadPoolthreadpoolfiles.tar</copy>
     ```
 
 2.	Install EPEL Repository and sysbench
@@ -81,8 +81,6 @@ This lab assumes you have:
     ```
     <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
     ```
-
-sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/10Aj4sllv2ek8kIQSthP31EQXY1rS_RjXjG31WAS6ttnFQiLONkIWQCX1h2ck-CC/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/ThreadPoolthreadpoolfiles.tar
 
 3.	Install all RPMs:
 
