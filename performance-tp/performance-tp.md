@@ -99,11 +99,30 @@ This lab assumes you have:
     <copy>sudo systemctl start mysqld</copy>
     ```
 
-    b. Retrieve root password for first login: 
+    c. Retrieve root password for first login: 
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo grep -i 'temporary password' /var/log/mysqld.log</copy>
+    ```
+
+    d. Login to the the mysql-enterprise installation and check the status (you will be asked to change password)
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+     ```
+    <copy>mysqlsh --uri root@localhost:3306 --sql -p </copy>
+    ```
+
+    e. Create New Password for MySQL Root
+
+    **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh>**
+    ```
+    <copy>ALTER USER 'root'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
+    ```
+
+     **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh>**
+    ```
+    <copy>\status</copy>
     ```
 
 4.	Setup OS for handling large amount of connections:
