@@ -125,6 +125,11 @@ This lab assumes you have:
     <copy>\status</copy>
     ```
 
+     **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh>**
+    ```
+    <copy>\quit</copy>
+    ```
+
 4.	Setup OS for handling large amount of connections:
 
     a. Edit the /etc/security/limits.conf
