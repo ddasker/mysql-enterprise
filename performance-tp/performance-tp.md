@@ -35,7 +35,50 @@ This lab assumes you have:
 
 
 ## Task 1: Install and setup environment  
-1.	Install EPEL Repository and sysbench
+
+1.	Setup hardware and networking as described in Lab 1 & Lab 2
+
+    a. Follow steps listed below.  For Lab 2 where you create the Compute, use a 12 OCPU Core with 1TB of storage.  
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+*    [Lab 1](https://ddasker.github.io/mysql-enterprise/workshops/freetier/index.html?lab=create-vcn)
+*    [Lab 2](https://ddasker.github.io/mysql-enterprise/workshops/freetier/index.html?lab=create-compute)
+    ```
+
+2. SSH to Server 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>ssh -i id_rsa opc@public_ip </copy>
+    ```
+
+3.  Make /workshop Directory
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo mkdir /workshop </copy>
+    ```
+
+4.  Download workshop files 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>cd /workshop </copy>
+    ```
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy> sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/10Aj4sllv2ek8kIQSthP31EQXY1rS_RjXjG31WAS6ttnFQiLONkIWQCX1h2ck-CC/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/ThreadPoolthreadpoolfiles.tar</copy>
+    ```
+    
+5.  Extract workshop files 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo tar xvf ThreadPoolthreadpoolfiles.tar</copy>
+    ```
+
+2.	Install EPEL Repository and sysbench
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
@@ -44,7 +87,7 @@ This lab assumes you have:
 Download files:
 sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/10Aj4sllv2ek8kIQSthP31EQXY1rS_RjXjG31WAS6ttnFQiLONkIWQCX1h2ck-CC/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/ThreadPoolthreadpoolfiles.tar
 
-2.	Install all RPMs:
+3.	Install all RPMs:
 
     a. Run Yum 
 
