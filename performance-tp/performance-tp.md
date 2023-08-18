@@ -192,7 +192,8 @@ This lab assumes you have:
     ```
     <copy> max_connections=30000
     back_log=30000
-    max_prepared_stmt_count=64000</copy>
+    max_prepared_stmt_count=64000
+    skip-log-bin</copy>
     ```
 
     d. Determine what file to edit if using systemd for MySQL
