@@ -277,6 +277,14 @@ This lab assumes you have:
     port=3306
     ```
 
+    f. Prepare sysbench table
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>time bash /home/opc/BMK/sb_exec/sb11-Prepare_TPCC_100W-InnoDB-NoFK.sh 32</copy>
+    ```
+
+
 
 ## Task 3: Install setup Thread Pool  
 
