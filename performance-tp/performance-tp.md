@@ -231,50 +231,6 @@ This lab assumes you have:
     <copy>sudo service mysqld restart</copy>
     ```
 
-4.	Install the Thread Pool plugin
-
-    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    
-    ```
-    <copy>sudo nano /etc/my.cnf</copy>
-    ```
-
-    b. Add the following lines to load the plugin
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>plugin-load-add=thread_pool.so</copy>    
-    ```
-
-    c. Restart MySQL
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo service mysqld restart</copy>
-    ```
-
-    d. Confirm that the plugin has been loaded
-    
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>mysql -uroot -pWelcome1! -e"SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS
-       WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
-    ```
-
-5.	Now we enable Encryption on the employees.employees table:
-
-    a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
-    ```
-
-6.	"Spy" on employees.employees table again:
-
-    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo strings "/var/lib/mysql/employees/employees.ibd" | head -n50</copy>
-    ```
-
 
 
 ## Task 2: Install and setup Benchmarks  
