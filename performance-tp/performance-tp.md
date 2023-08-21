@@ -382,6 +382,13 @@ This lab assumes you have:
     ```
     b. Sit back and wait 2.5 hours
 
+## Task 4: My results
+
+| # of Connections 	|QPS   |TPS 	|QPS 	|TPS|
+|-------------------|-------|-------|-------|---|
+|1	                |3948	|136	|4277	|146|
+|2	                |12498	|430	|12433	|429|
+
 ## Learn More
 
 * [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html)
