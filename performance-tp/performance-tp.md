@@ -332,9 +332,10 @@ This lab assumes you have:
     ```
     <copy>./bench.sh | tee output_No_TP.txt</copy>
     ```
+
     b. Sit back and wait 2.5 hours
 
-## Task 3: Install setup Thread Pool  
+## Task 3: Install, setup, and run Benchmarks with Thread Pool enabled 
 
 1.	Install the Thread Pool plugin
 
@@ -371,6 +372,15 @@ This lab assumes you have:
        WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
     ```
 
+2.	Run benchmarks
+
+    a. Run bench.sh and copy the output to a file
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>./bench.sh | tee output_With_TP.txt</copy>
+    ```
+    b. Sit back and wait 2.5 hours
 
 ## Learn More
 
