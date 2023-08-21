@@ -260,12 +260,23 @@ This lab assumes you have:
     <copy>export BMK_HOME="/home/opc/BMK"</copy>
     ```
 
-    c. Change login details for Toolkit
+    d. Change login details for Toolkit
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>vi ~/BMK/.bench</copy>
     ```
+
+    e. Make it look like this:
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    user=dim
+    pass=Welcome1!
+    host=127.0.0.1
+    port=3306
+    ```
+
 
 ## Task 3: Install setup Thread Pool  
 
