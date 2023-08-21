@@ -69,21 +69,28 @@ This lab assumes you have:
     <copy> sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/hvlf2jeM3UEwUxJSvCbNvL6fcHWvbtNdbQb0o4nj-8kBJIADuCINAtnab10-nXMc/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/threadpool.tar</copy>
     ```
     
-5.  Extract workshop files 
+5.  Expand filesystem to use all available space
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo /usr/libexec/oci-growfs</copy>
+    ```
+
+6.  Extract workshop files 
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>tar xvf threadpool.tar</copy>
     ```
 
-6.	Install EPEL Repository and sysbench
+7.	Install EPEL Repository and sysbench
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</copy>
     ```
 
-3.	Install all RPMs and Setup MySQL:
+8.	Install all RPMs and Setup MySQL:
 
     a. Run Yum 
 
@@ -130,7 +137,7 @@ This lab assumes you have:
     <copy>\quit</copy>
     ```
 
-4.	Setup OS for handling large amount of connections:
+9.	Setup OS for handling large amount of connections:
 
     a. Edit the /etc/security/limits.conf
 
@@ -165,7 +172,7 @@ This lab assumes you have:
     <copy>sudo service mysqld restart</copy>
     ```
 
-3.	Setup the benchmarking 
+10.	Setup the benchmarking 
 
     a. Create the sample database
 
