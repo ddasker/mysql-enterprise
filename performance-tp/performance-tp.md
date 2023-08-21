@@ -189,6 +189,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
+    <copy>sudo cp /home/opc/workshop/my.conf-TPX512-tp32-w2 /etc/my.cnf</copy>
     <copy>sudo vi /etc/my.cnf</copy>
     ```
     ```
