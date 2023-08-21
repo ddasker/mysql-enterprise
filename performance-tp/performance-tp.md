@@ -193,7 +193,7 @@ This lab assumes you have:
     <copy>sudo vi /etc/my.cnf</copy>
     ```
     ```
-    <copy>skip-log-bin</copy>
+    <copy> skip-log-bin</copy>
     ```
 
     d. Determine what file to edit if using systemd for MySQL
@@ -276,17 +276,43 @@ This lab assumes you have:
     ```
 
 
-7.	Administrative commands
-
-    a. Get details on encrypted key file:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SHOW VARIABLES LIKE 'keyring_encrypted_file_data'\G</copy>
-    ```
-
 
 ## Task 2: Install and setup Benchmarks  
 1.	Install EPEL Repository and sysbench
+
+
+## Task 3: Install setup Thread Pool  
+
+1.	Install the Thread Pool plugin
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    
+    ```
+    <copy>sudo nano /etc/my.cnf</copy>
+    ```
+
+    b. Add the following lines to load the plugin
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>plugin-load-add=thread_pool.so</copy>    
+    ```
+
+    c. Restart MySQL
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo service mysqld restart</copy>
+    ```
+
+    d. Confirm that the plugin has been loaded
+    
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -e"SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS
+       WHERE PLUGIN_NAME LIKE 'thread%';"</copy>
+    ```
+
 
 ## Learn More
 
