@@ -179,8 +179,10 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>mysql -uroot -pWelcome1! -e"CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';"</copy>
-    <copy>mysql -uroot -pWelcome1! -e"GRANT ALL ON *.* TO 'dim'@'%'";</copy>
+    <copy>mysql -uroot -pWelcome1!</copy>
+    <copy>CREATE USER 'dim'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';</copy>
+    <copy>GRANT ALL ON *.* TO 'dim'@'%';</copy>
+    <copy>quit;</copy>
     ```
 
     c. Setup MySQL to handle many connections
