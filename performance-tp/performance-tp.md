@@ -202,7 +202,10 @@ This lab assumes you have:
     <copy>sudo vi /etc/my.cnf</copy>
     ```
     ```
-    <copy> skip-log-bin</copy>
+    <copy>skip-log-bin</copy>
+    ```
+    ```
+    <copy>max_connections=25000</copy>
     ```
 
     d. Determine what file to edit if using systemd for MySQL
@@ -284,7 +287,9 @@ This lab assumes you have:
     port=3306
     ```
 
-    f. Prepare sysbench table
+2.	Initialize and start BMK toolkit
+
+    a. Prepare sysbench table
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
