@@ -296,7 +296,26 @@ This lab assumes you have:
     <copy>time bash /home/opc/BMK/sb_exec/sb11-Prepare_TPCC_100W-InnoDB-NoFK.sh 32</copy>
     ```
 
+3.	Create bash script for iterating through number of connections
 
+    a. Entitle the file bench.sh
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>vi bench.sh</copy>
+    ```
+
+    b. Contents should be
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>#!/bin/bash
+    for users in 1 2 4 8 16 32 64 128 256 512 1024 2048 4000 5000 6000 8000 9000 10000 11000 12000 13000 14000 15000 16000 17000 18000 19000 20000
+    do
+        bash /home/opc/BMK/sb_exec/sb11-TPCC_100W.sh $users 300 --luajit-cmd=off
+    sleep 30
+    done</copy>
+    ```
 
 ## Task 3: Install setup Thread Pool  
 
