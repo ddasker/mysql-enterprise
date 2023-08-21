@@ -387,6 +387,7 @@ This lab assumes you have:
 * [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html)
 * [sysBench code](https://github.com/akopytov/sysbench/tree/master)
 * [sysBench useage](https://www.mortensi.com/2021/06/how-to-install-and-use-sysbench/)
+* [BMK Toolkit useage](http://dimitrik.free.fr/blog/posts/mysql-perf-bmk-kit.html)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
