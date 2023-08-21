@@ -317,6 +317,23 @@ This lab assumes you have:
     done</copy>
     ```
 
+    c. Change the mod of the file
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>chmod +x bench.sh</copy>
+    ```
+
+4.	Run benchmarks
+
+    a. Run bench.sh and copy the output to a file
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>./bench.sh | tee output_No_TP.txt</copy>
+    ```
+    b. Sit back and wait 2.5 hours
+
 ## Task 3: Install setup Thread Pool  
 
 1.	Install the Thread Pool plugin
@@ -327,11 +344,16 @@ This lab assumes you have:
     <copy>sudo nano /etc/my.cnf</copy>
     ```
 
-    b. Add the following lines to load the plugin
+    b. Uncomment the following lines to load the plugin
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>plugin-load-add=thread_pool.so</copy>    
+    # TP
+    plugin_load=thread_pool=thread_pool.so
+    thread_pool_max_transactions_limit=512
+    thread_pool_size=32
+    thread_pool_query_threads_per_group=2
+    thread_pool_algorithm=1 
     ```
 
     c. Restart MySQL
