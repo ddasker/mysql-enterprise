@@ -234,7 +234,15 @@ This lab assumes you have:
 
 
 ## Task 2: Install and setup Benchmarks  
-1.	Install EPEL Repository and sysbench
+1.	Install BMK toolkit
+
+    a. Untar files
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>cd ~
+    tar xvf workshop/BMK-kit.tgz</copy>
+    ```
 
 
 ## Task 3: Install setup Thread Pool  
