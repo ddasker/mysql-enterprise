@@ -246,6 +246,19 @@ This lab assumes you have:
     tar xvf workshop/BMK-kit.tgz</copy>
     ```
 
+    b. Setup environment variables
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>vi ~/.bashrc</copy>
+    ```
+
+    c. Add environment variables
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>export BMK_HOME="/home/opc/BMK"</copy>
+    ```
 
 ## Task 3: Install setup Thread Pool  
 
