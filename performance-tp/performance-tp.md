@@ -420,6 +420,7 @@ This lab assumes you have:
 
 
 [Raw Results](files/Summation_of_Results.xlsx)
+
 ## Learn More
 
 * [Thread Pool Plugins](https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html)
