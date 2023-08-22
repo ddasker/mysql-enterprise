@@ -419,7 +419,7 @@ This lab assumes you have:
 | 20000	            |29645	|1027	|232043	    |7991   |
 
 ## Raw Results
-[Raw Results](files/Summation_of_Results.xlsx)
+[Raw Results](files/Summation_of_Results.pdf)
 
 ## Learn More
 
