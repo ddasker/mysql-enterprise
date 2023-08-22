@@ -385,8 +385,8 @@ This lab assumes you have:
 
 ## Task 4: My results
 
-|                   | Without TP    | With TP       |
 |-------------------|-------|-------|-------|-------|
+|                   | Without TP    | With TP       |
 | # of Connections 	|QPS    |TPS 	|QPS 	|TPS    |
 |-------------------|-------|-------|-------|-------|
 | 1	                |3948	|136	|4277	|146    |
