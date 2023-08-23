@@ -32,7 +32,8 @@ This lab assumes you have:
 - Thread Pooling has more functions than what we test in the lab. The full list of functions is here
 - https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
-
+**Presentation**
+[Presentation](files/MySQL_ThreadPool.pdf)
 
 ## Task 1: Install and setup environment.  These steps can be handled on your own time if you are not able to keep up.    
 
