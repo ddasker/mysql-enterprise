@@ -33,7 +33,7 @@ This lab assumes you have:
 - https://dev.mysql.com/doc/refman/8.0/en/thread-pool.html
 
 **Presentation**
-[Presentation](files/MySQL_ThreadPool.pdf)
+- [Presentation](files/MySQL_ThreadPool.pdf)
 
 ## Task 1: Install and setup environment.  These steps can be handled on your own time if you are not able to keep up.    
 
