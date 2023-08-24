@@ -35,6 +35,7 @@ This lab assumes you have:
 **Presentation**
 - [Presentation](files/MySQL_ThreadPool.pdf)
 
+
 ## Task 1: Install and setup environment.  These steps can be handled on your own time if you are not able to keep up.    
 
 1.	Setup hardware and networking as described in Lab 1 & Lab 2
