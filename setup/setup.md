@@ -134,7 +134,6 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/votWQhR-wMX-ro12lv5DZ9XVHvGaNu5FcMEumkeKQ5gSOeEhjkXVKyWHdorYUyIL/n/idazzjlcjqzj/b/bucket-20230109-1614-Security_Workshop_01252023/o/workshop.tar.gz</copy>
     <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/uGCrFNgC78ICfy99iQ4HaAO5eXqUgJgrUudMTgsf8u4Yi_wxx7HWY8sgIEyDBFeG/n/idazzjlcjqzj/b/bucket-20230109-1614-Security_Workshop_01252023/o/workshop.tar.gz</copy>
     ```
     
