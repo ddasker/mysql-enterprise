@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## Task 1: Install firewall plugin
 
-1. To install the data masking plugin, execute with statements 
+1. To install the firewall component, execute with statements 
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
