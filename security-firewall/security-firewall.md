@@ -35,7 +35,7 @@ This lab assumes you have:
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -pWelcome1! -e"source /usr/share/mysql-8.3/linux_install_firewall.sql"</copy>
+    <copy>mysql -uroot -pWelcome1! -D mysql -e"source /usr/share/mysql-8.3/linux_install_firewall.sql"</copy>
     ```
 
     b.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
