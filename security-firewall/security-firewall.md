@@ -99,7 +99,7 @@ This lab assumes you have:
     <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user@localhost';</copy>
     ```
 
-## Task 3: Discussion and use  Masking functions and random generators
+## Task 3: Run queries to test Firewall characteristics.
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
 
@@ -122,13 +122,16 @@ This lab assumes you have:
     <copy>SELECT gen_rnd_email();</copy>
     ```
 
+## Optional: 
+
+
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Firewall Docs](https://dev.mysql.com/doc/refman/8.3/en/firewall.html)
+* [Enterprise Firewall with Drupal](https://dev.mysql.com/blog-archive/group-profiles-in-mysql-enterprise-firewall/)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Engineering
-* **Last Updated By/Date** - <Dale Dasker, January 2023
+* **Last Updated By/Date** - <Dale Dasker, February 2024
