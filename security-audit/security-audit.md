@@ -32,6 +32,7 @@ This lab assumes you have:
 ## Task 1: Setup Audit Log
 
 1. If already connected to MySQL then exit
+
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
@@ -41,6 +42,7 @@ This lab assumes you have:
 2. Enable Audit Log on mysql-enterprise (remember: you can’t install on mysql-gpl).  Audit is an Enterprise plugin.
 
      a. Load Audit functions.  If running in a replicated environment, load the plugin no each of the Replicas first and then modify the SQL script to only load the functions.
+
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
@@ -48,6 +50,7 @@ This lab assumes you have:
     ```
 
     b. Edit the my.cnf setting in /mysql/etc/my.cnf
+
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
