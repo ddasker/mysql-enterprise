@@ -53,6 +53,11 @@ This lab assumes you have:
     <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ``` 
 
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SET PERSIST mysql_firewall_mode = ON;</copy>
+    ``` 
+
 ## Task 2: Setup Firewall User and Rules
 
 1. Create user (fw_user) to run Firewall rules and inspect Information Schema tables: 
