@@ -64,62 +64,79 @@ This lab assumes you have:
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
-    <copy>CREATE USER 'fw_user'@'localhost' IDENTIFIED BY 'FWuser1!';</copy>
+    <copy>CREATE USER 'member1'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>GRANT ALL ON *.* TO 'fw_user'@'localhost';</copy>
+    <copy>GRANT ALL ON employees.* TO 'member1'@'localhost';</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fw_user@localhost';</copy>
+    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user@localhost';</copy>
+    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'member1@localhost';</copy>
     ```
 
-2. Turn on Recording of SQL commands and then test Firewall
+2. Create Group Profile and turn on Recording of SQL commands and then test Firewall
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_set_firewall_mode('fw_user@localhost', 'RECORDING');</copy>
+    <copy>CALL mysql.sp_set_firewall_groupmode('fwgrp', 'RECORDING');</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'fw_user@localhost';</copy>
+    <copy>CALL mysql.sp_set_firewall_enlist('fwgrp', 'member1@localhost');</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'fw_user@localhost';</copy>
+    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
+    ```
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'member1@localhost';</copy>
     ```
 
 ## Task 3: Run queries to test Firewall characteristics.
 
-1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
+1. Login on a separate terminal as member1.
 
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>SELECT mask_inner(NAME, 1,1, '&') FROM world.city limit 1;</copy>
+    <copy>mysql -umember1 -pWelcome1!</copy>
     ```
-2. Use data masking random generators to these statements several times
+
+2. Run some sample queries that are acceptable
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
-    <copy>SELECT gen_range(1, 200);</copy>
+    <copy>USE employees;SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10001; </copy>
     ```
+
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT gen_rnd_us_phone();</copy>
+    <copy>UPDATE titles SET to_date = CURDATE() WHERE emp_no = 10001;</copy>
     ```
+
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT gen_rnd_email();</copy>
+    <copy>SELECT emp_no, first_name, last_name, birth_date FROM employees ORDER BY birth_date LIMIT 10;</copy>
+    ```
+
+## Task 4: Inspect MySQL Firewall 
+
+1. Login on a separate terminal as root.
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -uroot -pWelcome1!</copy>
     ```
 
 ## Optional: 
