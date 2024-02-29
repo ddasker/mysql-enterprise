@@ -151,22 +151,55 @@ This lab assumes you have:
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
     ```
 
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ```
 
     f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'PROTECTING');</copy>
     ```
 
     g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member2@localhost');
+CALL mysql.sp_firewall_group_enlist('fwgrp', 'member3@localhost');
+CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
+    ```
+
+## Task 5: ReRun queries to test Firewall characteristics.
+
+1. Login on a separate terminal as member1.
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -umember1 -pWelcome1!</copy>
+    ```
+
+2. Run some sample queries that are acceptable
+
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>USE employees;SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011; </copy>
+    ```
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SHOW TABLES LIKE '%salaries%;</copy>
+    ```
+
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>TRUNCATE TABLE mysql.slow_log;</copy>
     ```
 
 ## Optional: 
