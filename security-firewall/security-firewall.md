@@ -180,7 +180,7 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
     <copy>mysql -umember1 -pWelcome1!</copy>
     ```
 
-2. Run some sample queries that are acceptable
+2. Run some sample queries to test firewall
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
@@ -201,6 +201,37 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
     ```
     <copy>TRUNCATE TABLE mysql.slow_log;</copy>
     ```
+
+3. Login on a separate terminal as root.
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -uroot -pWelcome1!</copy>
+    ```
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'DETECTING');</copy>
+    ```
+
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    ```
+
+4. Login on a separate terminal as member1.
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -umember1 -pWelcome1!</copy>
+    ```
+
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
+    ```
+
+
 
 ## Optional: 
 
