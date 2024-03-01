@@ -199,7 +199,7 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SHOW TABLES LIKE '%salaries%;</copy>
+    <copy>SHOW TABLES LIKE '%salaries%';</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
