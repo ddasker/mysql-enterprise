@@ -79,12 +79,12 @@ This lab assumes you have:
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
+    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT RULE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_WHITELIST WHERE USERHOST = 'member1@localhost';</copy>
+    <copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
     ```
 
 2. Create Group Profile and turn on Recording of SQL commands and then test Firewall
@@ -101,7 +101,7 @@ This lab assumes you have:
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM INFORMATION_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
+    <copy>SELECT MODE FROM PERFORMANCE_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
