@@ -96,7 +96,7 @@ This lab assumes you have:
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_set_firewall_enlist('fwgrp', 'member1@localhost');</copy>
+    <copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member1@localhost');</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
