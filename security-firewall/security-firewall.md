@@ -66,7 +66,7 @@ This lab assumes you have:
 
 2. Grant proper permissions to sample database for member1
     ```
-    <span style="color:blue">mysql><copy>GRANT ALL ON employees.* TO 'member1'@'localhost';</copy>
+    <span style="color:blue">mysql></span><copy>GRANT ALL ON employees.* TO 'member1'@'localhost';</copy>
     ```
 
 3. Inspect environment
