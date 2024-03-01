@@ -33,17 +33,18 @@ This lab assumes you have:
 
 1. Install MySQL Enterprise Firewall on mysql-advanced using CLI
     ```
-    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1! -D mysql -e"source /usr/share/mysql-8.3/linux_install_firewall.sql</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -uroot -pWelcome1! -D mysql -e"source /usr/share/mysql-8.3/linux_install_firewall.sql</copy>
     ```
 
 2. Connect to the instance with administrative account <span style="color:red">first SSH connection - administrative</span>
     ```
-    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1! </copy>
+    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1!</copy>
     ```
     ```
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL VARIABLES LIKE 'mysql_firewall_mode';</copy>
     ``````
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE "firewall%";</copy>
+    ```
 
 ## Task 1: Install firewall plugin
 
