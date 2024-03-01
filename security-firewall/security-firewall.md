@@ -87,9 +87,9 @@ This lab assumes you have:
     <span style="color:blue">mysql></span><copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member1@localhost');</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+6. Check environment
     ```
-    <copy>SELECT MODE FROM PERFORMANCE_SCHEMA.MYSQL_FIREWALL_USERS WHERE USERHOST = 'member1@localhost';</copy>
+    <span style="color:blue">mysql></span><copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
