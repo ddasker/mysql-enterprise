@@ -69,26 +69,22 @@ This lab assumes you have:
     <span style="color:blue">mysql><copy>GRANT ALL ON employees.* TO 'member1'@'localhost';</copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+3. Inspect environment
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <span style="color:blue">mysql></span><copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
     ```
-
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
+    <span style="color:blue">mysql></span><copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
     ```
 
-2. Create Group Profile and turn on Recording of SQL commands and then test Firewall
-
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+4. Create Group Profile and turn on Recording of SQL commands and then test Firewall
     ```
-    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'RECORDING');</copy>
+    <span style="color:blue">mysql></span><copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'RECORDING');</copy>
     ```
 
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+5. Add member1 to Firewall Group
     ```
-    <copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member1@localhost');</copy>
+    <span style="color:blue">mysql></span><copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member1@localhost');</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
