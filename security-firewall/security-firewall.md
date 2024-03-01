@@ -45,15 +45,20 @@ This lab assumes you have:
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SHOW GLOBAL VARIABLES LIKE '%firewall%';</copy>
+    <copy>GRANT FIREWALL_ADMIN ON *.* TO 'root'@'localhost';</copy>
     ``` 
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    <copy>SHOW GLOBAL VARIABLES LIKE '%firewall%';</copy>
     ``` 
 
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    ``` 
+
+    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SET PERSIST mysql_firewall_mode = ON;</copy>
     ``` 
@@ -86,7 +91,7 @@ This lab assumes you have:
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_set_firewall_groupmode('fwgrp', 'RECORDING');</copy>
+    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'RECORDING');</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
