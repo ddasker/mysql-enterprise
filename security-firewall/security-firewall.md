@@ -60,7 +60,6 @@ This lab assumes you have:
 
 1. Create user (member1) to run Firewall rules and inspect Information Schema tables: 
 
-    a. 
     ```
     <span style="color:blue">mysql></span><copy>CREATE USER 'member1'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
     ```
