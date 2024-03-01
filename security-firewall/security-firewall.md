@@ -29,6 +29,22 @@ This lab assumes you have:
 - The detailed documentation for MySQL Enterprise Firewall is located here:
 - https://dev.mysql.com/doc/refman/8.0/en/firewall.html
 
+## Task 1: Account Profiles
+
+1. Install MySQL Enterprise Firewall on mysql-advanced using CLI
+    ```
+    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1! -D mysql -e"source /usr/share/mysql-8.3/linux_install_firewall.sql</copy>
+    ```
+
+2. Connect to the instance with administrative account <span style="color:red">first SSH connection - administrative</span>
+    ```
+    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1! </copy>
+    ```
+    ```
+    <span style="color:blue">mysql></span><copy>SHOW GLOBAL VARIABLES LIKE 'mysql_firewall_mode';</copy>
+    ``````
+    <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE "firewall%";</copy>
+
 ## Task 1: Install firewall plugin
 
 1. To install the firewall component, execute with statements 
