@@ -40,13 +40,18 @@ This lab assumes you have:
     ```
     <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1!</copy>
     ```
+
+3. <span style="color:red">Administrative account</span> be sure it has the proper permissions to manage Firewall properties
+    ```
+    <span style="color:blue">mysql></span><copy>GRANT FIREWALL_ADMIN ON *.* TO 'root'@'localhost';</copy>
+    ```
     ```
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL VARIABLES LIKE 'mysql_firewall_mode';</copy>
     ``````
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE "firewall%";</copy>
     ```
 
-## Task 1: Install firewall plugin
+## Task 2: Install firewall plugin
 
 1. To install the firewall component, execute with statements 
 
