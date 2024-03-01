@@ -47,7 +47,8 @@ This lab assumes you have:
     ```
     ```
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL VARIABLES LIKE 'mysql_firewall_mode';</copy>
-    ``````
+    ```
+    ```
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE "firewall%";</copy>
     ```
 
