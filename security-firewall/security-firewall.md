@@ -38,7 +38,7 @@ This lab assumes you have:
 
 2. Connect to the instance with administrative account <span style="color:red">first SSH connection - administrative</span>
     ```
-    <span style="color:green">shell-mysql1></span><copy>mysql -uroot -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -uroot -pWelcome1!</copy>
     ```
 
 3. <span style="color:red">Administrative account</span> be sure it has the proper permissions to manage Firewall properties
@@ -52,39 +52,9 @@ This lab assumes you have:
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE "firewall%";</copy>
     ```
 
-## Task 2: Install firewall plugin
-
-1. To install the firewall component, execute with statements 
-
-    a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -pWelcome1! -D mysql -e"source /usr/share/mysql-8.3/linux_install_firewall.sql"</copy>
+    <span style="color:blue">mysql></span><copy>SET PERSIST mysql_firewall_mode = ON;</copy>
     ```
-
-    b.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
-    ```
-    <copy>mysql -uroot -pWelcome1!</copy>
-    ```
-
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>GRANT FIREWALL_ADMIN ON *.* TO 'root'@'localhost';</copy>
-    ``` 
-
-    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SHOW GLOBAL VARIABLES LIKE '%firewall%';</copy>
-    ``` 
-
-    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
-    ``` 
-
-    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SET PERSIST mysql_firewall_mode = ON;</copy>
-    ``` 
 
 ## Task 2: Setup Firewall User and Rules
 
