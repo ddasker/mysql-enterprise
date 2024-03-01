@@ -58,11 +58,11 @@ This lab assumes you have:
 
 ## Task 2: Setup Firewall User and Rules
 
-1. Create user (fw_user) to run Firewall rules and inspect Information Schema tables: 
+1. Create user (member1) to run Firewall rules and inspect Information Schema tables: 
 
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
+    a. 
     ```
-    <copy>CREATE USER 'member1'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
+    <span style="color:blue">mysql></span><copy>CREATE USER 'member1'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
