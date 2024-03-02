@@ -88,6 +88,7 @@ This lab assumes you have:
     ```
 
 6. Check environment
+
     ```
     <span style="color:blue">mysql></span><copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
     ```
@@ -97,7 +98,7 @@ This lab assumes you have:
 
 ## Task 3: Run queries to test Firewall characteristics.
 
-1. Login on a separate terminal as member1.
+1. <span style="color:red">Member1 Connection</span> on a separate terminal.
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
@@ -106,19 +107,16 @@ This lab assumes you have:
 
 2. Run some sample queries that are acceptable
 
-    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
-    <copy>USE employees;SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10001; </copy>
-    ```
-
-    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>UPDATE titles SET to_date = CURDATE() WHERE emp_no = 10001;</copy>
+    <span style="color:blue">mysql></span><copy>USE employees;SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10001; </copy>
     ```
 
-    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT emp_no, first_name, last_name, birth_date FROM employees ORDER BY birth_date LIMIT 10;</copy>
+    <span style="color:blue">mysql></span><copy>UPDATE titles SET to_date = CURDATE() WHERE emp_no = 10001;</copy>
+    ```
+
+    ```
+    <span style="color:blue">mysql></span><copy>SELECT emp_no, first_name, last_name, birth_date FROM employees ORDER BY birth_date LIMIT 10;</copy>
     ```
 
 ## Task 4: Inspect MySQL Firewall 
