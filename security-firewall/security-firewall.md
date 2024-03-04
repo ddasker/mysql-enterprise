@@ -121,41 +121,41 @@ This lab assumes you have:
 
 ## Task 4: Inspect MySQL Firewall 
 
-1. Login on a separate terminal as root.
+1. <span style="color:red">Administrative account</span>Login on a separate terminal as root.
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -uroot -pWelcome1!</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
+    <span style="color:blue">mysql></span><copy>SELECT MODE FROM performance_schema.firewall_groups WHERE NAME = 'fwgrp';</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT * FROM performance_schema.firewall_membership WHERE GROUP_ID = 'fwgrp' ORDER BY MEMBER_ID;</copy>
+    <span style="color:blue">mysql></span><copy>SELECT * FROM performance_schema.firewall_membership WHERE GROUP_ID = 'fwgrp' ORDER BY MEMBER_ID;</copy>
     ```
 
     d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
+    <span style="color:blue">mysql></span><copy>SELECT RULE FROM performance_schema.firewall_group_allowlist WHERE NAME = 'fwgrp';</copy>
     ```
 
     e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ```
 
     f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'PROTECTING');</copy>
+    <span style="color:blue">mysql></span><copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'PROTECTING');</copy>
     ```
 
     g. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member2@localhost');
+    <span style="color:blue">mysql></span><copy>CALL mysql.sp_firewall_group_enlist('fwgrp', 'member2@localhost');
 CALL mysql.sp_firewall_group_enlist('fwgrp', 'member3@localhost');
 CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
     ```
