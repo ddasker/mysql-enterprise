@@ -121,7 +121,7 @@ This lab assumes you have:
 
 ## Task 4: Inspect MySQL Firewall 
 
-1. <span style="color:red">Administrative account</span>Login on a separate terminal as root.
+1. <span style="color:red">Administrative account</span> Login on a separate terminal as root.
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
@@ -166,7 +166,7 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -umember1 -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -umember1 -pWelcome1!</copy>
     ```
 
 2. Run some sample queries to test firewall
@@ -191,33 +191,33 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
     <span style="color:blue">mysql></span><copy>TRUNCATE TABLE mysql.slow_log;</copy>
     ```
 
-3. Login on a separate terminal as root.
+3. <span style="color:red">Administrative Account</span> Login on a separate terminal as root.
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -uroot -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -uroot -pWelcome1!</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
-    <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'DETECTING');</copy>
+    <span style="color:blue">mysql></span><copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'DETECTING');</copy>
     ```
 
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
-    <copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
     ```
 
-4. Login on a separate terminal as member1.
+4. <span style="color:red">Member1 Connection</span> Login on a separate terminal as member1.
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -umember1 -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -umember1 -pWelcome1!</copy>
     ```
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
+    <span style="color:blue">mysql></span><copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
     ```
 
 
