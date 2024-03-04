@@ -102,7 +102,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>mysql -umember1 -pWelcome1!</copy>
+    <span style="color:green">shell-mysql></span><copy>mysql -umember1 -pWelcome1!</copy>
     ```
 
 2. Run some sample queries that are acceptable
