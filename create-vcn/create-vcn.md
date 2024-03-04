@@ -52,14 +52,14 @@ In this lab, you will be guided through the following tasks:
  Compartment: Select  **(root)**
 
  Your screen should look similar to the following
-    ![VCN](./images/03vcn04.png " ")
+    ![VCN](./images/myvcn_04.png " ")
 
 5. Click 'Next' at the bottom of the screen 
 
 6. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
          
     Click 'Create' to create the VCN
-    ![VCN](./images/03vcn04-1.png " ")
+    ![VCN](./images/myvcn_05.png " ")
 
 7. The Virtual Cloud Network creation is completing 
     ![VCN](./images/03vcn05.png " ")
@@ -104,4 +104,4 @@ Description
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, April 2022
+* **Last Updated By/Date** - <Dale Dasker, March 2024
