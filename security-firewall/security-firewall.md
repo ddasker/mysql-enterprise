@@ -220,6 +220,11 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
     <span style="color:blue">mysql></span><copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
     ```
 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
+    ```
+    <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
+    ```
+
 
 
 ## Optional: 
