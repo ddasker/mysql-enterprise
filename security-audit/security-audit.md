@@ -109,7 +109,7 @@ This lab assumes you have:
 
 ## Task 2: Use Audit
 
-1. Login to mysql-enterprise with the user “appuser1”, then submit some commands
+1. Login to mysql-enterprise with the user <span style="color:red">appuser1 Connection</span>, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
