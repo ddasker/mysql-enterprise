@@ -83,7 +83,7 @@ This lab assumes you have:
     <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
     ```
 
-    a. Using the Administrative Connection, create a Audit Filter for all activity and all users. Privileges required are AUDIT_ADMIN and SUPER
+    a. Using the <span style="color:red">Administrative Account</span> , create a Audit Filter for all activity and all users. Privileges required are AUDIT_ADMIN and SUPER
 
  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
