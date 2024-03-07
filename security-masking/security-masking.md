@@ -81,7 +81,7 @@ This lab assumes you have:
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>CREATE TABLE employees_mask LIKE employees;</copy>
+    <copy>USE employees; CREATE TABLE employees_mask LIKE employees;</copy>
     ```
 
 2. Add data to newly created table
