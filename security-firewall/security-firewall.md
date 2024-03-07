@@ -217,9 +217,15 @@ CALL mysql.sp_firewall_group_enlist('fwgrp', 'member4@localhost');</copy>
 
     b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <span style="color:blue">mysql></span><copy>SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
+    <span style="color:blue">mysql></span><copy>USE employees; SELECT emp_no, title, from_date, to_date FROM titles WHERE emp_no = 10011 OR TRUE; </copy>
     ```
 
+5. <span style="color:red">Administration Connection</span> Login on a separate terminal as Adminstrator.
+
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <span style="color:green">shell-mysql></span><copy>mysql -uroot -pWelcome1!</copy>
+    ```
     c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <span style="color:blue">mysql></span><copy>SHOW GLOBAL STATUS LIKE '%firewall%';</copy>
