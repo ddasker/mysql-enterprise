@@ -74,7 +74,7 @@ This lab assumes you have:
     ```
 
 
-4.	Now we enable Encryption on the employees.employees table:
+4.	Now with <span style="color:red">Administrative Account</span> we enable Encryption on the employees.employees table:
 
     a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
