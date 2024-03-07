@@ -273,7 +273,7 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-7. Let's setup Audit to only log table accesss. Using the Administrative Connection, create a Audit Filter for tables
+7. Let's setup Audit to only log table accesss. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for tables
 
     a. Remove previous filter:
 
