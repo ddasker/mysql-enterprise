@@ -30,7 +30,7 @@ This lab assumes you have:
 
 
 ## Task 1: Install and setup TDE  
-1.	Install MySQL Enterprise Transparent Data Encrytption on mysql-enterprise using Administrative MySQL client connections 
+1.	Install MySQL Enterprise Transparent Data Encrytption on mysql-enterprise using <span style="color:red">Administrative Account</span> MySQL client connections 
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
