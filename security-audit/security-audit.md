@@ -181,7 +181,7 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-4. Let's setup Audit to only log unique users. Using the Administrative Connection, create a Audit Filter for appuser1
+4. Let's setup Audit to only log unique users. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for appuser1
 
     a. Remove previous filter:
 
