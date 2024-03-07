@@ -406,7 +406,7 @@ This lab assumes you have:
     <copy>UPDATE employees.salaries SET salary = 74234 WHERE emp_no = 10001;</copy>
     ```
 
-10. Some Administrative commands for checking Audit filters and users.  Log in using the Administrative Connection
+10. Some Administrative commands for checking Audit filters and users.  Log in using the <span style="color:red">Administrative Account</span> 
 
    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
