@@ -247,7 +247,7 @@ This lab assumes you have:
     <copy>quit;</copy>
     ```
 
-6. Login to mysql-enterprise with the user “appuser2”, then submit some commands
+6. Login to mysql-enterprise with the user <span style="color:red">appuser2 Connection</span>, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
