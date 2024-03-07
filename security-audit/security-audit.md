@@ -135,7 +135,7 @@ This lab assumes you have:
     <copy>SELECT emp_no,salary FROM employees.salaries WHERE salary > 90000;</copy>
     ```
 
-2. Let's setup Audit to only log connections. Using the Administrative Connection, create a Audit Filter for all connections
+2. Let's setup Audit to only log connections. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for all connections
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
