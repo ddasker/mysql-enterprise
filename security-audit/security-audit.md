@@ -308,7 +308,7 @@ This lab assumes you have:
     ```
     
 
-    d.  Login to mysql-enterprise with the user “appuser1”, then submit some commands
+    d.  Login to mysql-enterprise with the user <span style="color:red">appuser1 Account</span>, then submit some commands
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
