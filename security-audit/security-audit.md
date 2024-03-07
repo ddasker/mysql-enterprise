@@ -215,7 +215,7 @@ This lab assumes you have:
     <copy>SELECT audit_log_filter_flush();</copy>
     ```
 
-5. Login to mysql-enterprise with the user “appuser1”, then submit some commands
+5. Login to mysql-enterprise with the user <span style="color:red">appuser1 Connection</span>, then submit some commands
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
