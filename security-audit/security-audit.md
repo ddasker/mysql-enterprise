@@ -379,7 +379,7 @@ This lab assumes you have:
     <copy>SELECT audit_log_filter_set_user('%', 'salary_insert');</copy>
     ```
 
-9. Login as 'appuser1' and run a query against the salaries table;
+9. Login as <span style="color:red">appuser1 Connection</span> and run a query against the salaries table;
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
