@@ -135,6 +135,7 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/7ksImQ8yU4QBafl1MEHw2BEP97Kh59WaLYlC_ibMSrtww3ofNWnhmfVtYQKTevt4/n/idazzjlcjqzj/b/bucket-20240214-SecurityWorkshop03142024/o/workshop83.tar</copy>
+    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/OF1GVurpaOBWTq5EaxYQO0EzsMZhuWsdQsei_vE7bvT20GjPaJh6cX5et5bRmDQL/n/idazzjlcjqzj/b/bucket-20240214-SecurityWorkshop03142024/o/workshop83.tar</copy>
     ```
     
 4.  Extract workshop files 
