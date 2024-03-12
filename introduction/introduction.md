@@ -25,6 +25,7 @@ In this workshop, you will learn how to work with
 - MySQL Enterprise Audit
 - MySQL Enterprise Transparent Data Encryption 
 - MySQL Enterprise Data Masking
+- MySQL Enterprise Firewall
 
 ## Learn More
 
@@ -32,7 +33,8 @@ In this workshop, you will learn how to work with
 * [MySQL Enterprise Audit](https://dev.mysql.com/doc/refman/8.0/en/audit-log.html)
 * [MySQL Enterprise Transparent Data Encryption](https://dev.mysql.com/doc/refman/8.0/en/innodb-data-encryption.html)
 * [MySQL Enterprise Data Masking](https://dev.mysql.com/doc/refman/8.0/en/data-masking.html)
+* [MySQL Enterprise Firewall](https://dev.mysql.com/doc/refman/8.0/en/firewall.html)
 
 ## Acknowledgements
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - Dale Dasker, January 2023
+* **Last Updated By/Date** - Dale Dasker, March 2023
