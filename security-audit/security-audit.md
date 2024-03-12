@@ -137,6 +137,11 @@ This lab assumes you have:
 
 2. Let's setup Audit to only log connections. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for all connections
 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
+    ```
+
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
@@ -182,6 +187,11 @@ This lab assumes you have:
     ```
 
 4. Let's setup Audit to only log unique users. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for appuser1
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
+    ```
 
     a. Remove previous filter:
 
@@ -275,6 +285,11 @@ This lab assumes you have:
 
 7. Let's setup Audit to only log table accesss. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for tables
 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
+    ```
+
     a. Remove previous filter:
 
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -335,6 +350,11 @@ This lab assumes you have:
     ```
 
 8. Let's setup Audit to only log access to salaries tables. Using the <span style="color:red">Administrative Account</span>, create a Audit Filter for salaries
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306</copy>
+    ```
 
     a. Remove previous filter:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
@@ -459,4 +479,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Dale Dasker, MySQL Solution Engineering
-* **Last Updated By/Date** - <Dale Dasker, February 2024
+* **Last Updated By/Date** - <Dale Dasker, March 2024
