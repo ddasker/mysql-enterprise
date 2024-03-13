@@ -15,7 +15,7 @@ For working on this workshop you will need a clean computer to run on.  We shoul
 
 If you have not set it up, then please go through the following steps:
 
-* [OCI Free Tier Setup](https://plforacle.github.io/learning-library/data-management-library/mysql-se/mysql-cloud/workshops/register/index.html)
+* [OCI Free Tier Setup](https://www.oracle.com/mysql/free/)
 
 ## Objectives
 
