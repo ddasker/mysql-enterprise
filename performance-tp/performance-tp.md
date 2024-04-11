@@ -69,7 +69,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/wNSNI5nRMZB82nKWXnS8Ow_KOMabkgk18lov-CXrGMN603gh_tbkazO7F0mDi5wE/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/threadpool.tar</copy>
+    <copy>sudo wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/UnCA6ATQ3Oea4GgEeGZyR2TU4sghesB7BR0cUf8xz_oBIbO34jP3qkry8Ky1WI_n/n/idazzjlcjqzj/b/bucket-20230816-0811j-ThreadPool/o/threadpool.tar</copy>
     ```
     
 5.  Expand filesystem to use all available space
