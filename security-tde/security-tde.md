@@ -72,7 +72,7 @@ This lab assumes you have:
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>sudo nano /usr/lib64/mysql/plugin/configuration_keyring_file.cnf </copy>    
+    <copy>sudo nano /usr/lib64/mysql/plugin/component_keyring_file.cnf </copy>    
     ```
 
     c. Insert the following lines: 
@@ -80,7 +80,7 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>{
-        "path": "/var/lib/mysql-keyring/component_keyring_file",
+        "path": "/usr/local/mysql/keyring/component_keyring_file",
         "read_only": false
     }</copy>    
     ```
