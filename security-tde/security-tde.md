@@ -105,6 +105,18 @@ This lab assumes you have:
     <copy>sudo service mysqld restart</copy>
     ```
 
+    f. Check on status of Component
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
+    ```
+
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
+    ```
+    <copy>SELECT * FROM performance_schema.keyring_component_status</copy>
+    ```
+
 3.	"Spy" on employees.employees table
 
     a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
