@@ -85,9 +85,20 @@ This lab assumes you have:
     }</copy>    
     ```
 
-    d. Restart MySQL
+    d. Create component keyring file and set it's properties
 
-    d. Restart MySQL
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo touch /usr/local/mysql/keyring/component_keyring_file</copy>    
+    ```
+    ```
+    <copy>sudo chown mysql:mysql /usr/local/mysql/keyring/component_keyring_file</copy>    
+    ```
+    ```
+    <copy>sudo chmod 600 /usr/local/mysql/keyring/component_keyring_file</copy>    
+    ```
+
+    e. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
