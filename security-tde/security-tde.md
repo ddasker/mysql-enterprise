@@ -68,7 +68,26 @@ This lab assumes you have:
     }</copy>    
     ```
 
-    c. Restart MySQL
+    c. Create a configuration file for the Keyring Component 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo nano /usr/lib64/mysql/plugin/configuration_keyring_file.cnf </copy>    
+    ```
+
+    c. Insert the following lines: 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>{
+        "path": "/var/lib/mysql-keyring/component_keyring_file",
+        "read_only": false
+    }</copy>    
+    ```
+
+    d. Restart MySQL
+
+    d. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
