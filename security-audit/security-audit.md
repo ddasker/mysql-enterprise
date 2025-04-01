@@ -46,7 +46,7 @@ This lab assumes you have:
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306 -D mysql < /usr/share/mysql-8.3/audit_log_filter_linux_install.sql</copy>
+    <copy>mysql -uroot -pWelcome1! -h 127.0.0.1 -P 3306 -D mysql < /usr/share/mysql-8.4/audit_log_filter_linux_install.sql</copy>
     ```
 
     b. Edit the my.cnf setting in /mysql/etc/my.cnf
