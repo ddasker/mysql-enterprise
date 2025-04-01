@@ -160,37 +160,31 @@ This lab assumes you have:
 
 6.	Administrative commands
 
-    a. Get details on encrypted key file:
-    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
-    ```
-    <copy>SHOW VARIABLES LIKE 'keyring_encrypted_file_data'\G</copy>
-    ```
-
-    b. Set default for all tables to be encrypted when creating them:
+    a. Set default for all tables to be encrypted when creating them:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SET GLOBAL default_table_encryption=ON;</copy>
     ```
 
-    c. Peek on the mysql System Tables:
+    b. Peek on the mysql System Tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
     ```
 
-    d. Encrypt the mysql System Tables:
+    c. Encrypt the mysql System Tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>ALTER TABLESPACE mysql ENCRYPTION = 'Y';</copy>
     ```
 
-    e. Validate encryption of the mysql System Tables:
+    d. Validate encryption of the mysql System Tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>sudo strings "/var/lib/mysql/mysql.ibd" | head -n70</copy>
     ```
 
-    f. Show all the encrypted tables:
+    e. Show all the encrypted tables:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT SPACE, NAME, SPACE_TYPE, ENCRYPTION FROM INFORMATION_SCHEMA.INNODB_TABLESPACES WHERE ENCRYPTION='Y'\G</copy>
