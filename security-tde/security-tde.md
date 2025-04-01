@@ -36,27 +36,36 @@ This lab assumes you have:
     ```
     <copy>mysql -u root -pWelcome1! -P3306 -h127.0.0.1 </copy>
     ```
-2.	Check to see if any keyring plugin is installed and load if not:
+2.	Check to see if any keyring component is installed and load if not:
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
-    <copy>SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'keyring%'; </copy>
+    <copy>SELECT * FROM mysql.component; </copy>
     ```
 
-    b. Edit the my.cnf setting in /etc/my.cnf
-
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
-    ```
-    <copy>sudo nano /etc/my.cnf</copy>
-    ```
-
-    b. Add the following lines to load the plugin and set the encrypted key file
+    b. Create Keyring directory 
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
-    <copy>early-plugin-load=keyring_encrypted_file.so    
-    keyring_encrypted_file_data=/var/lib/mysql-keyring/keyring-encrypted    
-    keyring_encrypted_file_password=V&rySec4eT</copy>    
+    <copy>sudo mkdir /usr/local/mysql</copy>
+    <copy>sudo mkdir /usr/local/mysql/keyring</copy>
+    <copy>sudo chown -R mysql:mysql /usr/local/mysql</copy>
+    ```
+
+    b. Create a manifest file for the Keyring Component 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo nano /usr/sbin/mysqld.my  </copy>    
+    ```
+
+    b. Insert the following lines: 
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>{    
+        "components": "file://component_keyring_file"
+    }</copy>    
     ```
 
     c. Restart MySQL
