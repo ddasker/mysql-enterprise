@@ -98,14 +98,21 @@ This lab assumes you have:
     <copy>sudo chmod 600 /usr/local/mysql/keyring/component_keyring_file</copy>    
     ```
 
-    e. Restart MySQL
+    e. Disable SELinux
+
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+    ```
+    <copy>sudo setenforce 0</copy>
+    ```
+
+    f. Restart MySQL
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>sudo service mysqld restart</copy>
     ```
 
-    f. Check on status of Component
+    g. Check on status of Component
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
